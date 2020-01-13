@@ -1,0 +1,3667 @@
+<!DOCTYPE html>
+<!-- PROJECT NAME: ΟΔΗΓΟΣ ΧΡΗΣΗΣ για τον Hybrid Αποκωδικοποιητή KAONMEDIA NS1110H
+Built with Bootstrap Framework,Jquery, CSS3, HTML5,Font Awesome.
+ΣΤΟΙΧΕΙΑ ΠΡΟΓΡΑΜΜΑΤΙΣΤΗ:
+ONOMA: Κλάδης Νικόλαος
+Ε-MAIL: nkladis@ote.gr -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>ΟΔΗΓΟΣ ΧΡΗΣΗΣ για τον Hybrid Αποκωδικοποιητή KAONMEDIA NS1110H</title>
+    <!-- Bootstrap AND Custom CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/range.css" rel="stylesheet">
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="js/timedate.js" charset="utf-8"></script>
+    <script src="js/functionality.js" charset="utf-8"></script>
+    <script src="js/populate.js" charset="utf-8"></script>
+
+  </head>
+
+<body>
+  <div class="container">
+  <nav class="navbar navbar-default">
+  	<div class="container-fluid">
+  	<div class="row">
+  	   <div class="col-md-6">
+  	    <a class="header-link" href="index.html" title="home"><img src="img/otetvlogo.png"/></a>
+       </div>
+       <div class="col-md-6">
+        <h3 class=" date"> <div id="dateDiv">__</div> </h3>
+       </div>
+   </div>
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+<!-- NAVBAR -->
+       <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Κανάλια <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#" onclick="showProgramm()">Πρόγραμμα</a></li>
+                <li><a href="#" onclick="okButton()">Λίστα Καναλιών</a></li>
+                <li><a href="#" onclick="showReplayTV()">Replay TV*</a></li>
+                <li><a href="#" onclick="showSearch()">Αναζήτηση*</a></li>
+              </ul>
+            </li>
+
+           <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">On Demand* <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#" onclick="showCinemaOnDemand()">Cinema on Demand</a></li>
+                <li><a href="#" onclick="showSearch()">Αναζήτηση</a></li>
+              </ul>
+            </li>
+
+           <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ρυθμίσεις<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#" onclick="showSignalSettings()">Ρυθμίσεις Σήματος**</a></li>
+                <li><a href="#" onclick="genSettings()">Γενικές Ρυθμίσεις</a></li>
+                <li><a href="#" onclick="showSoundAndSubtitles()">Ήχος και Υπότιτλοι</a></li>
+                <li><a href="#" onclick="showVideoSettings()">Ρυθμίσεις Video</a></li>
+                <li><a href="#" onclick="systema()">Σύστημα</a></li>
+                <li><a href="#" onclick="showReboot()">Επανεκκίνηση</a></li>
+                <li><a href="#" onclick="showRestoreDIV()">Επαναφορά</a></li>
+              </ul>
+            </li>
+
+           <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Λογαριασμός Χρήστη <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#" onclick="showUserPriviledges()">Δικαιώματα Χρηστών</a></li>
+                <li><a href="#" onclick="showUserManagement()">Διαχείριση Χρηστών*</a></li>
+                <li><a href="#" onclick="showFavChannels()">Αγαπημένα Κανάλια</a></li>
+                <li><a href="#" onclick="showMyRecordings()">Εγγραφές</a></li>
+                <li><a href="#" onclick="showMyDownloads()">Οι Λήψεις μου*</a></li>
+                <li><a href="#" onclick="showMyOnDemand()">Τα On Demand μου*</a></li>
+                <li><a href="#" onclick="showRentalHistory()">Ιστορικό Ενοικιάσεων*</a></li>
+                <li><a href="#" onclick="showMessages()">Μηνύματα</a></li>
+                <li><a href="#agentInfo" data-target="#agentInfo" data-toggle="modal" onclick="showLogOut()">Αποσύνδεση*</a></li>
+              </ul>
+            </li>
+           </ul>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+    </nav>
+  </div> <!--/.container -->
+
+<div class="container service">
+<!--ΠΡΟΓΡΑΜΜΑ -->
+        <div id="programm" class="row hidden">
+      	   <div id="programm-title" class="col-md-12">
+      	    	<h3>Πρόγραμμα</h3>
+              <div id="progCatAltPlace" class="ola"><h3 class="ola">Όλα</h3></div>
+           </div>
+       <div class="row">
+         <table id="timeTable" class="table">
+             <tbody>
+                 <tr>
+                   <th class="war">Τρίτη 26/05</th>
+                   <th>13:30</th>
+                   <th>14:00</th>
+                   <th>14:30</th>
+                   <th>15:00</th>
+                   <th>15:30</th>
+                   <th class="caretfon"><i class="fa fa-caret-up pull-right" aria-hidden="true"></i></th>
+                 </tr>
+             </tbody>
+         </table>
+       		<div id="programm-table" class="col-md-12">
+            <table id="theProgrammTable" class="table table-bordered table-hover">
+                <tbody>
+                    <tr>
+                      <th>302 ΟΤΕ Sport 2 HD</th>
+                        <td colspan="3"><i class="fa fa-circle pinkbullet" aria-hidden="true"></i>
+Ποδόσφαιρο: Βαλένθια-Ράγιο Βαγιεκάνο</td>
+                    </tr>
+                    <tr>
+                      <th>302 ΟΤΕ Sport 3 HD</th>
+                        <td colspan="2">Sports Show</td>
+                        <td>NBA Daily</td>
+                    </tr>
+                  <tr>
+                      <th>302 ΟΤΕ Sport 4 HD</th>
+                          <td>NBA Daily</td>
+                          <td colspan="2"><i class="fa fa-circle pinkbullet" aria-hidden="true"></i>Fiba World Championship</td>
+                    </tr>
+                    <tr>
+                        <th>302 ΟΤΕ Sport 5 HD</th>
+                          <td>Moto GP</td>
+                          <td>Formula E</td>
+                          <td>FIA Παγκόσμιο...</td>
+                      </tr>
+                      <tr>
+                          <th>302 ΟΤΕ Sport 6 HD</th>
+                            <td>Sports Highlights</td>
+                            <td colspan="2"><i class="fa fa-circle pinkbullet" aria-hidden="true"></i>Tένις:2016 ATP WORLD TOUR MASTERS</td>
+                      </tr>
+                </tbody>
+            </table>
+            </div>
+            <i class="fa fa-caret-down pull-right" aria-hidden="true"></i>
+          </div>
+          <h3>Ποδόσφαιρο: Βαλένθια-Ράγιο Βαγιεκάνο <span class="pull-right">302 OTE Sport 2 HD</span></h3>
+          <h4>13:30-15:30 26/05(120')</h4>
+          <h4><div>Κατηγορία: Αθλητικά Week of Finals.Ισπανικό κύπελλο. Φάση των 32, 2ος αγώνας.(16/12/14). Τα καλύτερα παιχνίδια των κυπέλλων
+          Γαλλίας,Γερμανίας και Ισπανίας με φόντο τους μεγάλους τελικούς της 30ής Μαίου. </div></h4>
+          <h4><div> Περιγραφή: Λάμπρος Μπαλάφας</div></h4>
+
+          <div id="buttonsPr">
+            <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-backward" aria-hidden="true"></i></button>
+            +/- 24 Ώρες
+            <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-forward" aria-hidden="true"></i></button>
+              <span class="pull-right">
+                <button type="button" class="btn btn-lg btn-danger" onclick="redButton()" data-toggle="modal" data-target=".bs-example-modal-lg"></button><span id="progFav">Προσ. Αγαπ.</span>
+                <button type="button" class="btn btn-lg btn-success" onclick="greenbutton()"></button>Επιλογές
+                <button type="button" class="btn btn-lg btn-warning" onclick="yellowButton()"></button>Αλλαγή Προβολής
+                <button type="button" class="btn btn-lg btn-primary" onclick="blueButton()"></button>Αλλαγ. Κατηγ.
+                <button type="button" class="btn btn-default btn-circle inforbutton" onclick="iButton()">i</button> Σύνοψη
+            </span>
+          </div>
+        </div>
+    <!--ΕΝΑΛΛΑΚΤΙΚΟ ΠΡΟΓΡΑΜΜΑ -->
+          <div id="alternativeProgramm" class="hidden">
+            <div class="row">
+              <div id="programm-title" class="altpro">
+                 <h4>Πρόγραμμα</h4>
+                 <span id="progCatPlace"><h4 class="ola">Όλα</h4></span>
+              </div>
+              <div class="row navigationPill">
+                 <div class="col-md-1">
+                    <button type="button" class="btn btn-lg btn-default chevron" onclick="leftAddActiveAltEPG()"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></button>
+                 </div>
+                 <div class="col-md-10">
+                    <ul class="nav nav-pills pull-left">
+                      <li id="altEPGChan1" role="presentation" class="active one-edge-shadow"><a href="#">105 ΕΡΤ HD</a></li>
+                      <li id="altEPGChan2" role="presentation"><a href="#">106 MEGA</a></li>
+                      <li id="altEPGChan3" role="presentation"><a href="#">107 ANT1</a></li>
+                      <li id="altEPGChan4" role="presentation"><a href="#">108 ALPHA</a></li>
+                    </ul>
+                 </div>
+                 <div class="col-md-1">
+                   <button type="button" class="btn btn-lg btn-default chevron" onclick="rightAddActiveAltEPG()"><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></button>
+                 </div>
+              </div>
+              <div class="row">
+                    <div class="col-md-6">
+                       <div id="yellowPro" class="panel">
+                         <div class="panel-heading war">Σαββάτο 02/07</div>
+                         <i class="fa fa-caret-up pull-right" aria-hidden="true"></i>
+                         <div class="panel-body">
+                           <ul>
+                             <li><a href="#">13:30 TV Quiz</a></li>
+                             <li><a href="#">14:00 Φίλα Το Βάτραχό Σου</a></li>
+                             <li><a href="#">14:30 Τρώμε μαζί Κ2</a></li>
+                             <li><a href="#">14:15 Κωνσταντίνου και Ελ...</a></li>
+                             <li><a href="#">16:30 Ant1 News</a></li>
+                             <li><a href="#">16:45 Μπετόβεν και Μπουζούκι</a></li>
+                             <li><a href="#">19:00 Ant1 News</a></li>
+                           </ul>
+                         </div>
+                         <div class="panel-heading">
+                           <i class="fa fa-caret-down pull-right" aria-hidden="true"></i>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col-md-6">
+                      <h3>107 ΑΝΤ 1<img id="altprogStar" class="hidden" src="img/starfav.png"></h3>
+                      <h3>Κωνσταντίνου και Ελένης Κ2 Ε17 (Ε)</h3>
+                      <h4>14:15 - 15:20  02/07(65') <img src="img/square.png" height="25" width="25"></h4>
+                      <h4>Επεισόδιο: Εσύ είσαι η αιτία που υποφέρω. Μετά από το τρακάρισμα, οι δυο συγκάτοικοι βρίσκονται στο νοσοκομείο. Όπως είναι αναμενόμενο, οι καυγάδες τους συνεχίζονται εκεί,
+                        καταφέρνοντας να αναστατώσουν τόσο το προσωπικό του νοσοκομείου όσο και τους υπόλοιπους ασθενείς.</h4>
+                 </div>
+           </div>
+              <div class="marginTOP100">
+                <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-backward" aria-hidden="true"></i></button>
+                +/- 24 Ώρες
+                <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-forward" aria-hidden="true"></i></button>
+                  <span class="pull-right">
+                    <button type="button" class="btn btn-lg btn-danger" onclick="redButton()" data-toggle="modal" data-target=".bs-example-modal-lg"></button><span id="progFavAlt">Προσ. Αγαπ.</span>
+                    <button type="button" class="btn btn-lg btn-success" onclick="greenbutton()"></button>Επιλογές
+                    <button type="button" class="btn btn-lg btn-warning" onclick="yellowButton()"></button>Αλλαγή Προβολής
+                    <button type="button" class="btn btn-lg btn-primary" onclick="blueButton()"></button>Αλλαγ. Κατηγ.
+                    <button type="button" class="btn btn-default btn-circle inforbutton" onclick="iButton()">i</button> Σύνοψη
+                </span>
+              </div>
+        </div>
+      </div>
+
+<!-- ΠΡΟΓΡΑΜΜΑ ΚΑΙ ΕΝΑΛΛΑΚΤΙΚΟ ΠΡΟΓΡΑΜΜΑ ΕΠΙΛΟΓΕΣ -->
+      <div id="programmChoices" class="panel panel-default centralized hidden">
+        <div class="panel-heading">
+          <h3 class="panel-title">Επιλογές</h3>
+        </div>
+        <div class="panel-body gbuttonchoices">
+          <table class="table table-hover">
+              <tbody>
+                <tr>
+                  <td><a href="#agentInfo" onclick="reminder()" data-toggle="modal">Υπενθύμιση</a></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><a href="#agentInfo" onclick="replayTVmsg()" data-toggle="modal">Replay TV*</a></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><a href="#" onclick="showRecord()">Εγγραφή Προγράμματος</a></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><a href="#agentInfo" onclick="seriesRecord()" data-toggle="modal">Εγγραφή Σειράς</a></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><a href="#" onclick="showRecordTimeBased()">Εγγραφή βάσει Χρονικής Διάρκειας</a></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><a href="#">Υπότιτλοι</a></td>
+                  <td><button type="button" class="btn btn-lg btn-default chevron" onclick="subsChoiceLeft()"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                      <span id="epgsubtitles">__</span>
+                      <button type="button" class="btn btn-lg btn-default chevron" onclick="subsChoiceRight()"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                  <td><a href="#">Γλώσσα ήχου</a></td>
+                  <td><button type="button" class="btn btn-lg btn-default chevron" onclick="langChoiceLeft()"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                      <span id="epgsoundlang">__</span>
+                      <button type="button" class="btn btn-lg btn-default chevron" onclick="langChoiceRight()"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                  <td><a href="#eidos" data-target="#eidos" data-toggle="modal">Είδος</a></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><a href="#" onclick="showSearch()">Αναζήτηση*</a></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><a href="#help" data-target="#help" data-toggle="modal">Βοήθεια</a></td>
+                  <td></td>
+                </tr>
+              </tbody>
+          </table>
+          <div class="panel-heading">
+              <h3 class="panel-title">  Πατήστε <i class="fa fa-undo" aria-hidden="true"></i> για κλείσιμο </h3>
+          </div>
+        </div>
+      </div>
+
+      <!--REPLAY TV -->
+            <div id="replayTVProgramm" class="hidden">
+              <div class="row">
+                <div id="programm-title" class="altpro">
+                   <h4>Πρόγραμμα</h4>
+                   <span id="progCatPlaceRTV"><h4 class="ola">Replay TV</h4></span>
+                </div>
+                <div class="row navigationPill">
+                   <div class="col-md-1">
+                      <button type="button" class="btn btn-lg btn-default chevron" onclick="leftAddActiveRepTV()"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></button>
+                   </div>
+                   <div class="col-md-10">
+                      <ul class="nav nav-pills pull-left">
+                        <li id="replTVChan1" role="presentation" class="active one-edge-shadow"><a href="#">105 ΕΡΤ HD</a></li>
+                        <li id="replTVChan2" role="presentation"><a href="#">106 MEGA</a></li>
+                        <li id="replTVChan3" role="presentation"><a href="#">107 ANT1</a></li>
+                        <li id="replTVChan4" role="presentation"><a href="#">108 ALPHA</a></li>
+                      </ul>
+                   </div>
+                   <div class="col-md-1">
+                     <button type="button" class="btn btn-lg btn-default chevron" onclick="rightAddActiveRepTV()"><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></button>
+                   </div>
+                </div>
+                <div class="row">
+                      <div class="col-md-6">
+                         <div id="yellowProRTV" class="panel">
+                           <div class="panel-heading war">Σαββάτο 02/07</div>
+                           <i class="fa fa-caret-up pull-right" aria-hidden="true"></i>
+                           <div class="panel-body">
+                             <ul>
+                               <li><a href="#">13:30 <i class="fa fa-circle pinkbullet" aria-hidden="true"></i> TV Quiz</a></li>
+                               <li><a href="#">14:00 <i class="fa fa-circle pinkbullet" aria-hidden="true"></i> Φίλα Το Βάτραχό Σου</a></li>
+                               <li><a href="#">14:30 <i class="fa fa-circle pinkbullet" aria-hidden="true"></i> Τρώμε μαζί Κ2</a></li>
+                               <li><a href="#">14:15 <i class="fa fa-circle pinkbullet" aria-hidden="true"></i> Κωνσταντίνου και Ελ...</a></li>
+                               <li><a href="#">16:30 <i class="fa fa-circle pinkbullet" aria-hidden="true"></i> Ant1 News</a></li>
+                               <li><a href="#">16:45 <i class="fa fa-circle pinkbullet" aria-hidden="true"></i> Μπετόβεν και Μπο...</a></li>
+                               <li><a href="#">19:00 <i class="fa fa-circle pinkbullet" aria-hidden="true"></i> Ant1 News</a></li>
+                             </ul>
+                           </div>
+                           <div class="panel-heading">
+                             <i class="fa fa-caret-down pull-right" aria-hidden="true"></i>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="col-md-6">
+                        <h3>107 ΑΝΤ 1<img id="rtvimgfav" class="hidden" src="img/starfav.png"></h3>
+                        <h3>Κωνσταντίνου και Ελένης Κ2 Ε17 (Ε)</h3>
+                        <h4>14:15 - 15:20  02/07(65') <img src="img/square.png" height="25" width="25"></h4>
+                        <h4>Επεισόδιο: Εσύ είσαι η αιτία που υποφέρω. Μετά από το τρακάρισμα, οι δυο συγκάτοικοι βρίσκονται στο νοσοκομείο. Όπως είναι αναμενόμενο, οι καυγάδες τους συνεχίζονται εκεί,
+                          καταφέρνοντας να αναστατώσουν τόσο το προσωπικό του νοσοκομείου όσο και τους υπόλοιπους ασθενείς.</h4>
+                   </div>
+             </div>
+                <div id="buttonsRTV" class="marginTOP100">
+                  <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-backward" aria-hidden="true"></i></button>
+                  +/- 24 Ώρες
+                  <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-forward" aria-hidden="true"></i></button>
+                    <span class="pull-right">
+                      <button type="button" class="btn btn-lg btn-danger" onclick="redButton()" data-toggle="modal" data-target=".bs-example-modal-lg"></button><span id="progreplayTV">Προσ. Αγαπ.</span>
+                      <button type="button" class="btn btn-lg btn-success" onclick="greenbutton()"></button>Επιλογές
+                      <button type="button" class="btn btn-default btn-circle inforbutton" onclick="iButton()">i</button> Σύνοψη
+                  </span>
+                </div>
+          </div>
+        </div>
+
+  <!-- REPLAY TV ΕΠΙΛΟΓΕΣ -->
+        <div id="RTVChoices" class="panel panel-default centralized hidden">
+          <div class="panel-heading">
+            <h3 class="panel-title">Επιλογές</h3>
+          </div>
+          <div class="panel-body gbuttonchoices">
+            <table class="table table-hover">
+                <tbody>
+                  <tr>
+                    <td><a href="#agentInfo" onclick="replayTVmsg()" data-toggle="modal">Replay TV*</a></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" onclick="showRecord()">Εγγραφή Προγράμματος</a></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" onclick="showRecordTimeBased()">Εγγραφή βάσει Χρονικής Διάρκειας</a></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" onclick="showSearch()">Αναζήτηση*</a></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#help" data-target="#help" data-toggle="modal">Βοήθεια</a></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+            </table>
+            <div class="panel-heading">
+                <h3 class="panel-title">  Πατήστε <i class="fa fa-undo" aria-hidden="true"></i> για κλείσιμο </h3>
+            </div>
+          </div>
+        </div>
+
+  <!-- Σύνοψη -->
+    <div id="synopsis" class="row synopsis hidden">
+      <div class="col-md-3">
+            <div id="sidebar-wrapper systima">
+            <ul class="sidebar-nav">
+                <li>
+                    <a href="#agentInfo" onclick="programmStart()" data-toggle="modal">Προβολή</a>
+                </li>
+                <li>
+                    <a href="#agentInfo" onclick="replayTVmsg()" data-toggle="modal">Replay TV</a>
+                </li>
+                <li>
+                    <a href="#" onclick="showRecord()">Εγγραφή Προγράμματος</a>
+                </li>
+                <li>
+                    <a href="#share" data-target="#share" data-toggle="modal">Κοινοποίηση</a>
+                </li>
+            </ul>
+        </div>
+      </div>
+      <!--  -->
+           <div class="col-md-7" style="padding:0">
+             <h3>Κωνσταντίνου και Ελένης Κ2 Ε17 (Ε)</h3>
+             <h3>107 ΑΝΤ 1</h3>
+             <h4>14:15 - 15:20  02/07(65') <img src="img/rombos.png"></h4>
+             <h4>Επεισόδιο: Εσύ είσαι η αιτία που υποφέρω. Μετά από το τρακάρισμα, οι δυο συγκάτοικοι βρίσκονται στο νοσοκομείο. Όπως είναι αναμενόμενο, οι καυγάδες τους συνεχίζονται εκεί,
+               καταφέρνοντας να αναστατώσουν τόσο το προσωπικό του νοσοκομείου όσο και τους υπόλοιπους ασθενείς.</h4>
+                 <div class="panel-heading">
+                     <h3 class="panel-title">  Πατήστε <i class="fa fa-undo" aria-hidden="true"></i> για κλείσιμο </h3>
+                 </div>
+          </div>
+    </div>
+
+    <div id="share" class="modal fade" tabindex="1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content centModalShare">
+          <div class="modal-body">
+            <textarea class="form-control" rows="5" id="comment">Βλέπω "Όνομα Προγράμματος στον ΟΤΕ TV"</textarea>
+                <br>
+                <input id="socialmediacb1" type="checkbox" class="socialmedia"/> <label for="socialmediacb1"><span></span></label><img src="img/fb.png" width="40", height="40"> Facebook
+                <br>
+                <input id="socialmediacb2" type="checkbox" class="socialmedia"/> <label for="socialmediacb2"><span></span></label><img src="img/twitter.png" width="40", height="40"> Twitter
+            </div>
+            <div class="modal-footer">
+              <button type="button" onclick="shareDone()" data-target="#agentInfo" data-dismiss="modal" data-toggle="modal" class="btn btn-lg btn-default buttonShare">Κοινοποίηση</button>
+              <button type="button" onclick="" class="btn btn-lg btn-default buttonShare" data-dismiss="modal">Ακύρωση</button>
+            </div>
+        </div>
+      </div>
+    </div>
+
+<!-- ΕΓΓΡΑΦΗ ΠΡΟΓΡΑΜΜΑΤΟΣ -->
+<div id="recordp" class="panel panel-default recordprog hidden">
+          <div class="panel-heading">
+              <h3 class="panel-title">Εγγραφή Προγράμματος</h3>
+            </div>
+            <div class="panel-body">
+              <table class="table table-hover">
+                <tbody>
+                  <tr>
+                    <td>Όνομα Καναλιού</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td style="font-size:17px">Όνομα Προγράμματος</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+						        <td>Χρόνος Έναρξης:</td>
+						        <td>14:00</td>
+                    <td></td>
+				          </tr>
+                  <tr>
+                    <td>Λήξη:</td>
+                    <td>15:00</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Κοινή Χρήση</td>
+                    <td><input id="recShare" type="checkbox" /><label for="recShare"><span></span></label></td>
+                    <td><i class="fa fa-eye" aria-hidden="true"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+		        </div>
+        <div class="panel-heading">
+             <button type="button" class="btn btn-lg btn-default confirm" onclick="recordConfirm1()">Επιβεβαίωση</button>
+        </div>
+</div>
+
+<!-- ΕΓΓΡΑΦΗ ΠΡΟΓΡΑΜΜΑΤΟΣ ΒΑΣΕΙ ΧΡΟΝΙΚΗΣ ΔΙΑΡΚΕΙΑΣ -->
+<div id="recordTimeBased" class="panel panel-default recordprog hidden">
+          <div class="panel-heading">
+              <h3 class="panel-title">Εγγραφή βάσει Χρονικής Διάρκειας</h3>
+            </div>
+            <div class="panel-body">
+              <table class="table table-hover">
+                <tbody>
+                  <tr>
+                    <td>Νούμερο Καναλιού</td>
+                    <td><input type="text" name="channelNum" value="208" style="width:140px"></td>
+                  </tr>
+                  <tr>
+                    <td>Όνομα Καναλίου</td>
+                    <td class="centText">
+                        <button type="button" class="btn btn-lg btn-default chevron pull-left" onclick=""><i class="fa fa-caret-left" aria-hidden="true"></i></button>
+                        <span>FOX</span>
+                        <button type="button" class="btn btn-lg btn-default chevron pull-right" onclick=""><i class="fa fa-caret-right" aria-hidden="true"></i></button></td>
+                  </tr>
+                  <tr>
+                    <td>Ήμέρα</td>
+                    <td class="centText">
+                        <button type="button" class="btn btn-lg btn-default chevron pull-left" onclick=""><i class="fa fa-caret-left" aria-hidden="true"></i></button>
+                        <span>Σήμερα</span>
+                        <button type="button" class="btn btn-lg btn-default chevron pull-right" onclick=""><i class="fa fa-caret-right" aria-hidden="true"></i></button></td>
+				          </tr>
+                  <tr>
+						        <td>Χρόνος Έναρξης:</td>
+						        <td><input type="text" name="timeStart" value="3:16" style="width:140px"></td>
+				          </tr>
+                  <tr>
+                    <td>Διάρκεια</td>
+                    <td><input type="text" name="timeCost" value="00:30" style="width:140px"></td>
+                  </tr>
+                  <tr>
+                    <td>Κοινή Χρήση</td>
+                    <td><input id="recshare2" type="checkbox" /><label for="recshare2"><span></span></label> &nbsp <i class="fa fa-eye" aria-hidden="true"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+		        </div>
+        <div class="panel-heading">
+             <button type="button" class="btn btn-lg btn-default confirm" onclick="recordConfirm1()">Επιβεβαίωση</button>
+             <button type="button" class="btn btn-lg btn-default confirm" onclick="cancelTimeBased()">Ακύρωση</button>
+        </div>
+</div>
+
+      <div id="recordConfirm" class="recordconfirm hidden">
+     				Θέλετε να ξεκινήσετε την εγγραφή "Όνομα Προγράμματος"; <br>
+     				<button type="button" class="btn btn-lg btn-default confirm" onclick="recordConfirm2()">OK</button>
+     				<button type="button" class="btn btn-lg btn-default confirm" onclick="cancelConfirm()">Ακύρωση</button>
+      </div>
+      <div id="confirmMessageYes" class="recordconfirm hidden">
+ 				    H εγγραφή του "Όνομα Προγράμματος"  ξεκίνησε <br>
+      </div>
+      <div id="stopRec" class="recordconfirm hidden">
+     				Θέλετε να σταματήσετε την εγγραφή; <br>
+     				<button type="button" class="btn btn-lg btn-default confirm" onclick="stopRecok()">OK</button>
+     				<button type="button" class="btn btn-lg btn-default confirm" onclick="stopReccancel()">Ακύρωση</button>
+      </div>
+      <div id="stopRecordmsg" class="recordconfirm hidden">
+ 				     H εγγραφή του "Όνομα Προγράμματος"  σταμάτησε <br>
+      </div>
+
+      <div id="nohddAv" class="recordconfirm hidden">
+ 				     Δεν υπάρχει διαθέσιμος σκληρός δίσκος <br>
+      </div>
+
+
+<!-- ΜΙΝΙ EPG -->
+         <div id="miniepg" class="hidden">
+           <div id="firstline">
+             <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+             302 OTE Sport 2 HD
+             <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+             <span id="dateDiv2" class="pull-right">__</span>
+           </div>
+
+          <div id="secondline" class="curprogramepg">
+              <span class="pinkbullet">&bull;</span> <span class="curprogramepg"> "Όνομα προγράμματος"</span>
+              <span class="pull-right"><span class="whitebullet">&bull;</span> Τρι Μάιος 26 13:30-15:30</span>
+          </div>
+          <input type="range" min="0" max="100" value="25" />
+          <hr>
+
+          <div id="thirdline">
+              <span class="nextprogramepg"> "Όνομα επόμενου προγράμματος"</span>
+              <span class="pull-right"><span class="whitebullet">&bull;</span> Τρι Μάιος 26 15:30-18:00</span>
+          </div>
+
+          <div id="forthline" class="pull-right">
+          <button type="button" class="btn btn-lg btn-danger" onclick="redButton()"></button> <span id="miniEPGfav">Προσ. Αγαπ.</span>
+          <button type="button" class="btn btn-lg btn-success" onclick="greenbutton()"></button> Επιλογές
+          <button type="button" class="btn btn-default btn-circle inforbutton" onclick="iButton()">i</button> Σύνοψη
+          </div>
+         </div>
+<!-- ΜΙΝΙ EPG CHOICES-->
+         <div id="miniEpgChoices" class="panel panel-default centralized hidden">
+           <div class="panel-heading">
+             <h3 class="panel-title">Επιλογές</h3>
+           </div>
+           <div class="panel-body miniepgchoices">
+             <table class="table table-hover">
+                 <tbody>
+                   <tr>
+                     <td><a href="#agentInfo" onclick="replayTVmsg()" data-toggle="modal">Replay TV*</a></td>
+                     <td></td>
+                   </tr>
+                   <tr>
+                     <td><a href="#" onclick="showRecord()">Εγγραφή Προγράμματος</a></td>
+                     <td></td>
+                   </tr>
+                   <tr>
+                     <td><a href="#agentInfo" onclick="seriesRecord()" data-toggle="modal">Εγγραφή Σειράς</a></td>
+                     <td></td>
+                   </tr>
+                   <tr>
+                     <td><a href="#" onclick="showRecordTimeBased()">Εγγραφή βάσει Χρονικής Διάρκειας</a></td>
+                     <td></td>
+                   </tr>
+                   <tr>
+                     <td><a href="#">Υπότιτλοι</a></td>
+                     <td><button type="button" class="btn btn-lg btn-default chevron" onclick="subsChoiceLeft()"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                         <span id="miniepgsubtitles">__</span>
+                         <button type="button" class="btn btn-lg btn-default chevron" onclick="subsChoiceRight()"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                       </td>
+                   </tr>
+                   <tr>
+                     <td><a href="#">Γλώσσα ήχου</a></td>
+                     <td><button type="button" class="btn btn-lg btn-default chevron" onclick="langChoiceLeft()"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                         <span id="miniepgsoundlang">__</span>
+                         <button type="button" class="btn btn-lg btn-default chevron" onclick="langChoiceRight()"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                       </td>
+                   </tr>
+                   <tr>
+                     <td><a href="#" onclick="showSearch()">Αναζήτηση*</a></td>
+                     <td></td>
+                   </tr>
+                   <tr>
+                     <td><a href="#help" data-target="#help" data-toggle="modal">Βοήθεια</a></td>
+                     <td></td>
+                   </tr>
+                 </tbody>
+             </table>
+             <div class="panel-heading">
+                 <h3 class="panel-title">  Πατήστε <i class="fa fa-undo" aria-hidden="true"></i> για κλείσιμο </h3>
+             </div>
+           </div>
+        </div>
+
+<!-- Green BUTTON FUNCTIONALITY-->
+<div id="gbutton" class="panel panel-default centralized hidden">
+  <div class="panel-heading">
+    <h3 class="panel-title">Επιλογές</h3>
+  </div>
+  <div class="panel-body gbuttonchoices">
+    <table class="table table-hover">
+        <tbody>
+          <tr>
+            <td><a href="#agentInfo" onclick="replayTVmsg()" data-toggle="modal">Replay TV*</a></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><a href="#" onclick="showRecord()">Εγγραφή Προγράμματος</a></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><a href="#agentInfo" onclick="seriesRecord()" data-toggle="modal">Εγγραφή Σειράς</a></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><a href="#" onclick="showRecordTimeBased()">Εγγραφή βάσει Χρονικής Διάρκειας</a></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><a href="#">Υπότιτλοι</a></td>
+            <td><button type="button" class="btn btn-lg btn-default chevron" onclick="subsChoiceLeft()"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                <span id="gbuttonsubs">__</span>
+                <button type="button" class="btn btn-lg btn-default chevron" onclick="subsChoiceRight()"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+              </td>
+          </tr>
+          <tr>
+            <td><a href="#">Γλώσσα ήχου</a></td>
+            <td><button type="button" class="btn btn-lg btn-default chevron" onclick="langChoiceLeft()"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                <span id="gbuttonsound">__</span>
+                <button type="button" class="btn btn-lg btn-default chevron" onclick="langChoiceRight()"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+              </td>
+          </tr>
+          <tr>
+            <td><a href="#" onclick="showSearch()">Αναζήτηση*</a></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><a href="#help" data-target="#help" data-toggle="modal">Βοήθεια</a></td>
+            <td></td>
+          </tr>
+        </tbody>
+    </table>
+    <div class="panel-heading">
+        <h3 class="panel-title">  Πατήστε <i class="fa fa-undo" aria-hidden="true"></i> για κλείσιμο </h3>
+    </div>
+  </div>
+</div>
+
+<!-- Red BUTTON FUNCTIONALITY-->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div id="addFav" class="modal-dialog modal-lg" role="document">
+    <div class="modal-content centModal">
+       <span id="messageFav">Επιτυχής προσθήκη καναλιού στα αγαπημένα</span>
+    </div>
+  </div>
+</div>
+
+<!-- MHNYMATA -->
+         <div id="messages" class="hidden">
+          Αυτή την στιγμή δεν υπάρχουν διαθέσιμα μηνύματα <br>
+         </div>
+
+<!-- ΖΩΝΤΑΝΗ ΠΑΥΣΗ ΠΡΟΓΡΑΜΜΑΤΟΣ -->
+         <div id="livepause" class="hidden">
+           <div class="livepause">
+             000 Όνομα Καναλιού
+             <span class="pull-right">
+               <button type="button" class="btn btn-lg btn-default chevron" onclick="livepausefb()" data-toggle="modal" data-target="#agentInfo"><i class="fa fa-fast-backward" aria-hidden="true"></i></button>
+               <button type="button" class="btn btn-lg btn-default chevron" onclick="livepausePause()" data-toggle="modal" data-target="#agentInfo"><i class="fa fa-pause" aria-hidden="true"></i></button>
+               <button type="button" class="btn btn-lg btn-default chevron" onclick="livepausePlay()" data-toggle="modal" data-target="#agentInfo"><i class="fa fa-play" aria-hidden="true"></i></button>
+               <button type="button" class="btn btn-lg btn-default chevron" onclick="livepauseStop()"><i class="fa fa-square" aria-hidden="true"></i></button>
+               <button type="button" class="btn btn-lg btn-default chevron" onclick="livepauseff()" data-toggle="modal" data-target="#agentInfo"><i class="fa fa-fast-forward" aria-hidden="true"></i></button>
+               <span class="speed">2X</span>
+             </span>
+           </div>
+
+          <input type="range" min="0" max="100" value="25" />
+          01:38:55/02:38:59
+            <div class="pull-right">
+              <button type="button" class="btn btn-lg btn-primary" onclick="livepauseBlue()" data-toggle="modal" data-target="#agentInfo"></button> -10 Λεπτά
+              <button type="button" class="btn btn-lg btn-warning" onclick="livepauseYellow()" data-toggle="modal" data-target="#agentInfo"></button> +10 Λεπτά
+              <button type="button" class="btn btn-lg btn-success" onclick="greenbutton()"></button> Επιλογές
+            </div>
+<!-- ΕΠΙΛΟΓΕΣ ΖΩΝΤΑΝΗΣ ΠΑΥΣΗΣ ΠΡΟΓΡΑΜΜΑΤΟΣ-->
+            <div id="lpchoicespanel" class="panel panel-default centralized hidden">
+              <div class="panel-heading">
+                <h3 class="panel-title">Επιλογές</h3>
+              </div>
+              <div class="panel-body lpchoices">
+                <table class="table table-hover">
+                  <tbody>
+                    <tr>
+                      <td><a href="#" onclick="showRecord()">Εγγραφή Προγράμματος</a></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><a href="#agentInfo" onclick="seriesRecord()" data-toggle="modal">Εγγραφή Σειράς</a></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><a href="#" onclick="showRecordTimeBased()">Εγγραφή βάσει Χρονικής Διάρκειας</a></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><a href="#">Υπότιτλοι</a></td>
+                      <td><button type="button" class="btn btn-lg btn-default chevron" onclick="subsChoiceLeft()"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                          <span id="subtitles">__</span>
+                          <button type="button" class="btn btn-lg btn-default chevron" onclick="subsChoiceRight()"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td><a href="#">Γλώσσα ήχου</a></td>
+                      <td><button type="button" class="btn btn-lg btn-default chevron" onclick="langChoiceLeft()"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                          <span id="soundlang">__</span>
+                          <button type="button" class="btn btn-lg btn-default chevron" onclick="langChoiceRight()"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td><a href="#help" data-target="#help" data-toggle="modal">Βοήθεια</a></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="panel-heading">
+                    <h3 class="panel-title">  Πατήστε <i class="fa fa-undo" aria-hidden="true"></i> για κλείσιμο </h3>
+                </div>
+              </div>
+           </div>
+
+<!-- BACK OR STOP BUTTON ΖΩΝΤΑΝΗ ΠΑΥΣΗ -->
+  <div id="bStopButton" class="centMessage hidden">
+          Παρακολουθείται ετεροχρονισμένη προβολή(Time Shift), η οποία θα σταματήσει αν επιλέξετε έξοδο. <br>
+          <button type="button" class="btn btn-lg btn-default confirm" onclick="lpExit()" data-toggle="modal" data-target="#agentInfo">Έξοδος</button>
+          <button type="button" class="btn btn-lg btn-default confirm" onclick="lpContinue()">Συνέχεια Προβολής</button>
+  </div>
+</div>
+
+<!--  ΡΥΘΜΙΣΕΙΣ ΣΗΜΑΤΟΣ-->
+ <div id="signalSettings" class="hidden row">
+   <div class="col-md-3">
+         <div id="sidebar-wrapper systima">
+         <ul class="sidebar-nav">
+             <li class="sidebar-brand">
+               Ρυθμίσεις Σήματος
+             </li>
+             <li>
+                 <a href="#" onclick="showSatSettings()">Ρυθμίσεις Δορυφόρου</a>
+             </li>
+             <li>
+                 <a href="#" onclick="showFreeSat()">Ελεύθερα Δορυφορικά</a>
+             </li>
+           </ul>
+     </div>
+   </div>
+
+   <!-- Ρυθμίσεις Δορυφόρου -->
+   <div id="satSettings" class=" hidden">
+     <div id="stepOne" class="col-md-7">
+          <table class="table table-hover settings">
+            <tbody class="">
+              <tr>
+                <td>DiSEqC</td>
+                <td class="rightColumn">
+                  <div class="tablegray">
+                  <button type="button" class="btn btn-lg btn-default chevron pull-left" onclick="disLeft()"><i class="fa fa-caret-left" aria-hidden="true"></i></button>
+                  <span id="diseqc">Κανένα</span>
+                  <button type="button" class="btn btn-lg btn-default chevron pull-right" onclick="disRight()"><i class="fa fa-caret-right" aria-hidden="true"></i></button>
+                </div>
+              </td>
+              </tr>
+              <tr>
+                <td>Αριθμός LNB</td>
+                <td class="rightColumn">
+                   <div class="tablegray">
+                    <button type="button" class="btn btn-lg btn-default chevron pull-left" onclick="lnbNumberLeft()"><i class="fa fa-caret-left" aria-hidden="true"></i></button>
+                    <span id="lnbNO">1</span>
+                    <button type="button" class="btn btn-lg btn-default chevron pull-right" onclick="lnbNumberRight()"><i class="fa fa-caret-right" aria-hidden="true"></i></button>
+                  </div>
+                </td>
+               </tr>
+              <tr>
+                <td>Δορυφόρος</td>
+                <td class="rightColumn">
+                <div class="tablegray">
+                  <button type="button" class="btn btn-lg btn-default chevron pull-left" onclick="satNameLeft()"><i class="fa fa-caret-left" aria-hidden="true"></i></button>
+                  <span id="sateliteName">EUTELSAT 9B</span>
+                  <button type="button" class="btn btn-lg btn-default chevron pull-right" onclick="satNameRight()"><i class="fa fa-caret-right" aria-hidden="true"></i></button>
+                </div>
+               </td>
+              </tr>
+              <tr>
+                <td>Τύπος LNB</td>
+                <td class="rightColumn">
+                <div class="tablegray">
+                  <button type="button" class="btn btn-lg btn-default chevron pull-left" onclick="lnbtypeRL()"><i class="fa fa-caret-left" aria-hidden="true"></i></button>
+                  <span id="lnbType">UNIVERSAL</span>
+                  <button type="button" class="btn btn-lg btn-default chevron pull-right" onclick="lnbtypeRL()"><i class="fa fa-caret-right" aria-hidden="true"></i></button>
+                </div>
+               </td>
+              </tr>
+              <tr>
+                <td>Χαμηλό Εύρος Συχνοτήτων LO</td>
+                <td class="rightColumn">
+                  <div class="tablegray">
+                  <button type="button" class="btn btn-lg btn-default chevron pull-left" onclick=""><i class="fa fa-caret-left" aria-hidden="true"></i></button>
+                  <span>09750</span>
+                  <button type="button" class="btn btn-lg btn-default chevron pull-right" onclick=""><i class="fa fa-caret-right" aria-hidden="true"></i></button>
+                </div>
+               </td>
+              </tr>
+              <tr>
+                <td>Υψηλό Εύρος Συχνοτήτων LO</td>
+                <td class="rightColumn">
+                  <div class="tablegray">
+                  <button type="button" class="btn btn-lg btn-default chevron pull-left" onclick=""><i class="fa fa-caret-left" aria-hidden="true"></i></button>
+                  <span>10600</span>
+                  <button type="button" class="btn btn-lg btn-default chevron pull-right" onclick=""><i class="fa fa-caret-right" aria-hidden="true"></i></button>
+                </div>
+               </td>
+               </tr>
+            </tbody>
+          </table>
+          <div class="panel-heading">
+               <button type="button" class="btn btn-lg btn-default buttonsSettings  confirm" onclick="showStepTwo()">Επιβεβαίωση</button>
+          </div>
+      </div>
+  <!-- ΑΝΑΜΕΤΑΔΟΤΕΣ -->
+      <div id="stepTwo" class="col-md-7 hidden">
+        <h4 class="pullCenter">Επιλέξτε αναμεταδότη για Ρύθμιση</h4>
+        <i class="fa fa-caret-up pullCenterI" aria-hidden="true"></i>
+           <table class="table table-hover">
+             <tbody class="">
+               <tr>
+                 <td rowspan="8" class=""><button type="button" class="btn btn-lg btn-default buttonsSettings confirm" onclick="showStepOne()">Πίσω</button></td>
+                 <td class="tableSteps"> <input type="checkbox" id="ote1Tr" onclick="ote1Tr()" checked="true"> <label for="ote1Tr"><span></span></label><button type="button" class="btn btn-lg btn-default buttonSignalSteps" onclick="ote1Tr()">OTE 1</button></td>
+                 <td rowspan="8" class=""><button type="button" class="btn btn-lg btn-default buttonsSettings confirm" onclick="" data-toggle="modal" data-target="#step3modal">Επιβεβαίωση</button></td>
+               </tr>
+               <tr>
+                 <td class="tableSteps"> <input type="checkbox" id="ote2Tr" onclick="ote2Tr()"> <label for="ote2Tr"><span></span></label><button type="button" class="btn btn-lg btn-default buttonSignalSteps" onclick="ote2Tr()">OTE 2</button> </td>
+              </tr>
+                <tr>
+                  <td class="tableSteps"> <input type="checkbox" id="ote3Tr" onclick="ote3Tr()"> <label for="ote3Tr"><span></span></label><button type="button" class="btn btn-lg btn-default buttonSignalSteps" onclick="ote3Tr()">OTE 3</button> </td>
+               </tr>
+               <tr>
+                 <td class="tableSteps"> <input type="checkbox" id="ote4Tr" onclick="ote4Tr()"> <label for="ote4Tr"><span></span></label><button type="button" class="btn btn-lg btn-default buttonSignalSteps" onclick="ote4Tr()">OTE 4</button> </td>
+              </tr>
+              <tr>
+                <td class="tableSteps"> <input type="checkbox" id="ote5Tr" onclick="ote5Tr()"> <label for="ote5Tr"><span></span></label><button type="button" class="btn btn-lg btn-default buttonSignalSteps" onclick="ote5Tr()">OTE 5</button> </td>
+             </tr>
+             <tr>
+               <td class="tableSteps"> <input type="checkbox" id="ote6Tr" onclick="ote6Tr()"> <label for="ote6Tr"><span></span></label><button type="button" class="btn btn-lg btn-default buttonSignalSteps" onclick="ote6Tr()">OTE 6</button> </td>
+            </tr>
+            <tr>
+              <td class="tableSteps"> <input type="checkbox" id="ote7Tr" onclick="ote7Tr()"> <label for="ote7Tr"><span></span></label><button type="button" class="btn btn-lg btn-default buttonSignalSteps" onclick="ote7Tr()">OTE 7</button> </td>
+           </tr>
+           <tr>
+             <td class="tableSteps"> <input type="checkbox" id="ote8Tr" onclick="ote8Tr()"> <label for="ote8Tr"><span></span></label><button type="button" class="btn btn-lg btn-default buttonSignalSteps" onclick="ote8Tr()">OTE 8</button> </td>
+          </tr>
+        </tbody>
+     </table>
+     <i class="fa fa-caret-down pullCenterI" aria-hidden="true"></i>
+   </div>
+
+   <div id="step3modal" class="modal fade" tabindex="1" role="dialog" aria-labelledby="myModalLabel">
+     <div class="modal-dialog" role="document">
+       <div class="modal-content centModalShare">
+         <div class="modal-body">
+            Έχετε επιλέξει να προχωρήσετε σε νέα αναζήτηση καναλιών. Όλες οι εγγραφές που είναι σε εξέλιξη θα διακοπούν.
+           </div>
+           <div class="modal-footer">
+             <button type="button" onclick="showStepThree()" data-dismiss="modal" class="btn btn-lg btn-default buttonsSettings">ΟΚ</button>
+             <button type="button" onclick="" class="btn btn-lg btn-default buttonsSettings" data-dismiss="modal">Ακύρωση</button>
+           </div>
+       </div>
+     </div>
+   </div>
+  <!-- Σήμα -->
+   <div id="stepThree" class="hidden">
+        <div class="col-md-7">
+          <h3> Έλενγχος Δορ.Σήματος </h3><br><br><br><br><br>
+          Ισχύς σήματος: 64%<br><br>
+          <input type="range" min="0" max="100" value="64" /> <br>
+          Ποιότητα σήματος: 95%<i class="fa fa-lock fa-4x pull-right" aria-hidden="true"></i><br>
+          <input type="range" min="0" max="100" value="95" />
+          Συχνότητα:12475 MHz<br>
+          Ρυθμός μετάδοσης:27500 lvlsymb/s<br>
+          FEC: 2/3<br>
+          <button type="button" onclick="finalizeSearch()" class="btn btn-lg btn-default buttonsSettings pullCenter">ΟΚ</button>
+          <button type="button" onclick="newSearch()" class="btn btn-lg btn-default buttonsSettings" data-toggle="modal" data-target="#agentInfo">Νέα αναζήτηση</button>
+        </div>
+   </div>
+</div>
+<!-- Ελεύθερα Δορυφορικά -->
+    <div id="freeSat" class="hidden">
+         <div id="stepOneFreeSat" class="col-md-7">
+           <table class="table table-hover settings2">
+             <tbody class="">
+               <tr>
+                 <td>Δορυφόρος</td>
+                 <td class="rightColumn">
+                   <div class="tablegray">
+                   <button type="button" class="btn btn-lg btn-default chevron pull-left" onclick="freeSatSateliteLeft()"><i class="fa fa-caret-left" aria-hidden="true"></i></button>
+                   <span id="freeSatSatelite">EUTELSAT 9B</span>
+                   <button type="button" class="btn btn-lg btn-default chevron pull-right" onclick="freeSatSateliteRight()"><i class="fa fa-caret-right" aria-hidden="true"></i></button>
+                 </div>
+               </td>
+               </tr>
+               <tr>
+                 <td>Αναμεταδότης</td>
+                 <td class="rightColumn">
+                  <div class="tablegray">
+                   <button type="button" class="btn btn-lg btn-default chevron pull-left" onclick="freeSatTransmitterz()"><i class="fa fa-caret-left" aria-hidden="true"></i></button>
+                   <span id="freeSatTransmit">all</span>
+                   <button type="button" class="btn btn-lg btn-default chevron pull-right" onclick="freeSatTransmitterz()"><i class="fa fa-caret-right" aria-hidden="true"></i></button>
+                 </div>
+               </td>
+               </tr>
+               <tr>
+                 <td>Συχνότητα</td>
+                 <td class="rightColumn">
+                   <div class="tablegray">
+                   <span id="freeSatFreq">&nbsp;</span>
+                 </div>
+               </td>
+               </tr>
+               <tr>
+                 <td>Πόλωση</td>
+                 <td class="rightColumn">
+                  <div class="tablegray">
+                   <button type="button" class="btn btn-lg btn-default chevron pull-left" onclick="lnbOrientation()"><i class="fa fa-caret-left" aria-hidden="true"></i></button>
+                   <span id="freeSatPolosi">&nbsp;</span>
+                   <button type="button" class="btn btn-lg btn-default chevron pull-right" onclick="lnbOrientation()"><i class="fa fa-caret-right" aria-hidden="true"></i></button>
+                 </div>
+               </td>
+               </tr>
+               <tr>
+                 <td>Ρυθμός Μετάδοσης</td>
+                 <td class="rightColumn">
+                   <div class="tablegray">
+                     <span id="freeSatRate">&nbsp;</span>
+                   </div>
+               </td>
+               </tr>
+               <tr>
+                 <td>Διαμόρφωση</td>
+                 <td class="rightColumn">
+                   <div class="tablegray">
+                   <button type="button" class="btn btn-lg btn-default chevron pull-left" onclick="modTypeLeft()"><i class="fa fa-caret-left" aria-hidden="true"></i></button>
+                   <span id="freeSatModType">&nbsp;</span>
+                   <button type="button" class="btn btn-lg btn-default chevron pull-right" onclick="modTypeRight()"><i class="fa fa-caret-right" aria-hidden="true"></i></button>
+                 </div>
+               </td>
+               </tr>
+               <tr>
+                 <td>FEC</td>
+                 <td class="rightColumn">
+                   <div class="tablegray">
+                   <button type="button" class="btn btn-lg btn-default chevron pull-left" onclick="fecLeft()"><i class="fa fa-caret-left" aria-hidden="true"></i></button>
+                   <span id="freeSatFEC">&nbsp;</span>
+                   <button type="button" class="btn btn-lg btn-default chevron pull-right" onclick="fecRight()"><i class="fa fa-caret-right" aria-hidden="true"></i></button>
+                 </div>
+                </td>
+               </tr>
+             </tbody>
+           </table>
+           <div class="panel-heading">
+                <button type="button" class="btn btn-lg btn-default buttonsSettings" onclick="showStepTwoFreeSat()" data-toggle="modal" data-target="#agentInfo">Προβολή Καναλιών</button>
+                <button type="button" class="btn btn-lg btn-default buttonsSettings" onclick="showStepTwoFreeSatAuto()" data-toggle="modal" data-target="#agentInfo">Αυτόματη</button>
+           </div>
+       </div>
+    <div id="stepTwoFreeSat" class="col-md-8 hidden">
+     <h4>Αποτελέσματα Αναζήτησης Καναλιών</h4>
+    <table class="table table-bordered freeSatTable">
+     <tbody>
+       <tr class="">
+         <th>Υπηρεσίες Τηλεόρασης(47)</th>
+         <th>Υπηρεσίες Ραδιοφώνου(56)</th>
+       </tr>
+       <tr class="">
+         <td><input type="checkbox" id="freeSat1" name="freeSat1" onchange="showSaveBtn()"/> <label for="freeSat1"><span></span></label>   AON</td>
+         <td><input type="checkbox" id="freeSat8" name="freeSat8"  onchange="showSaveBtn()"/> <label for="freeSat8"><span></span></label>   GSTS1</td>
+       </tr>
+       <tr class="">
+         <td><input type="checkbox" id="freeSat2" name="freeSat2"  onchange="showSaveBtn()"/> <label for="freeSat2"><span></span></label>   Fashion One</td>
+         <td><input type="checkbox" id="freeSat9" name="freeSat9"  onchange="showSaveBtn()"/> <label for="freeSat9"><span></span></label>   GSTS2</td>
+       </tr>
+       <tr class="">
+         <td><input type="checkbox" id="freeSat3" name="freeSat3"  onchange="showSaveBtn()"/> <label for="freeSat3"><span></span></label>   ANT1 EUROPE/td></td>
+         <td><input type="checkbox" id="freeSat10" name="freeSat10"  onchange="showSaveBtn()"/> <label for="freeSat10"><span></span></label>   Petofi Radio(AAC)</td>
+       </tr>
+       <tr class="">
+         <td><input type="checkbox" id="freeSat4" name="freeSat4"  onchange="showSaveBtn()"/> <label for="freeSat4"><span></span></label>   TMC HD SUISSE</td>
+         <td><input type="checkbox" id="freeSat11" name="freeSat11"  onchange="showSaveBtn()"/> <label for="freeSat11"><span></span></label>   Kossuh Radio(AAC)</td>
+       </tr>
+       <tr class="">
+         <td><input type="checkbox" id="freeSat5" name="freeSat5"  onchange="showSaveBtn()"/> <label for="freeSat5"><span></span></label>   NT1 HD SUISSE</td>
+         <td><input type="checkbox" id="freeSat12" name="freeSat12"  onchange="showSaveBtn()"/> <label for="freeSat12"><span></span></label>   GSTS2</td>
+       </tr>
+       <tr class="">
+         <td><input type="checkbox" id="freeSat6" name="freeSat6"  onchange="showSaveBtn()"/> <label for="freeSat6"><span></span></label>   TF1 HD SUISSE</td>
+         <td><input type="checkbox" id="freeSat13" name="freeSat13"  onchange="showSaveBtn()"/> <label for="freeSat13"><span></span></label>  Bartoc Radio(AAC)</td>
+       </tr>
+       <tr class="">
+         <td><input type="checkbox" id="freeSat7" name="freeSat7"  onchange="showSaveBtn()"/> <label for="freeSat7"><span></span></label>   M6 SUISSE HD</td>
+         <td><input type="checkbox" id="freeSat14" name="freeSat14"  onchange="showSaveBtn()"/> <label for="freeSat14"><span></span></label>  GSTS2</td>
+       </tr>
+       <tr class="blackBGCenter">
+         <td>
+           <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-backward" aria-hidden="true"></i></button>
+           1/7
+           <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-forward" aria-hidden="true"></i></button>
+         </td>
+         <td>
+           <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-backward" aria-hidden="true"></i></button>
+           1/7
+           <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-forward" aria-hidden="true"></i></button>
+         </td>
+       </tr>
+     </tbody>
+    </table>
+    Επιλέξτε / Αποεπιλέξτε με <button type="button" onclick="okButton()" class="btn btn-default btn-circle inforbutton" data-toggle="modal" data-target="#agentInfo">OK</button>
+      <div id="favUAButtons" class="pull-right">
+         <button type="button" class="btn btn-lg btn-warning" onclick="yellowButton()"></button> <span id="checkALLspanFreeSat">Επιλογή Όλων</span>
+         <span id="freeSatSaveBtn" class="hidden"><button type="button" class="btn btn-lg btn-primary" onclick="blueButton()" data-toggle="modal" data-target="#agentInfo"></button> Αποθήκευση Αλλαγών</span>
+      </div>
+    </div>
+    </div>
+</div>
+
+ <!-- ΓΕΝΙΚΕΣ ΡΥΘΜΙΣΕΙΣ -->
+ <div id="genSettings" class="row hidden">
+     <div class="col-md-3">
+           <div id="sidebar-wrapper systima">
+           <ul class="sidebar-nav">
+               <li class="sidebar-brand">
+                 Γενικές Ρυθμίσεις
+               </li>
+               <li>
+                   <a href="#" onclick="showLangSettings()">Γλώσσα Μενού</a>
+               </li>
+               <li>
+                   <a href="#" onclick="showProgrView()">Πρόγραμμμα</a>
+               </li>
+               <li>
+                   <a href="#" onclick="recSettings()">Ρυθμίσεις Εγγραφών</a>
+               </li>
+               <li>
+                   <a href="#" onclick="showPowerSaveOptions()">Εξοικονόμηση Ενέργειας</a>
+               </li>
+           </ul>
+       </div>
+     </div>
+
+   <!-- Γλώσσα Μενού -->
+  <div id="langSettings" class="hidden">
+       <div class="col-md-7">
+         <h4>Επιλέξτε γλώσσα μενού </h4>
+       <table class="table langMenu">
+         <tbody>
+           <tr class="langTableRow">
+             <td> <input type="checkbox" id="greek" onclick="greek()" checked="true"> <label for="greek"><span></span></label> </td>
+             <td>
+               <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="greek()">Ελληνικά</button> </div>
+             </td>
+           </tr>
+             <tr class="langTableRow">
+               <td> <input type="checkbox" id="english" onclick="english()"> <label for="english"><span></span></label></td>
+               <td>
+                 <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="english()">English</button> </div>
+               </td>
+             </tr>
+         </tbody>
+       </table>
+     </div>
+  </div>
+
+   <!-- Πρόγγραμα VIEW -->
+  <div id="progrView" class="hidden">
+       <div class="col-md-7">
+         <h4>Επιλέξτε στυλ Προβολής </h4>
+       <table class="table langMenu">
+         <tbody>
+           <tr class="langTableRow">
+             <td> <input type="checkbox" id="horizontal" onclick="horizontal()"> <label for="horizontal"><span></span></label> </td>
+             <td>
+               <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="horizontal()">Οριζόντια Προβολή</button> </div>
+             </td>
+           </tr>
+             <tr class="langTableRow">
+               <td> <input type="checkbox" id="vertical"  onclick="vertical()"> <label for="vertical"><span></span></label> </td>
+               <td>
+                 <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="vertical()">Κάθετη Προβολή</button> </div>
+              </td>
+             </tr>
+         </tbody>
+       </table>
+     </div>
+  </div>
+
+   <!-- ΡΥΘΜΊΣΕΙΣ ΕΓΓΡΑΦΏΝ -->
+   <div id="recSettings" class="hidden">
+        <div class="col-md-7">
+          <h4> Ρύθμιση Επιπλέον Χρόνου για εγγραφές </h4><br><br><br><br><br>
+          <div id="recSet" class="margLeft">
+            <table class="">
+              <tbody>
+                <tr>
+                  <td>Έναρξη</td>
+                  <td>
+                    <select class="selectpicker">
+                      <option style="background-color:black">Σύμφωνα με το πρόγραμμα</option>
+                      <option style="background-color:black">5 Λεπτά πριν την έναρξη</option>
+                      <option style="background-color:black">10 Λεπτά πριν την έναρξη</option>
+                      <option style="background-color:black">15 Λεπτά πριν την έναρξη</option>
+                      <option style="background-color:black">20 Λεπτά πριν την έναρξη</option>
+                      <option style="background-color:black">25 Λεπτά πριν την έναρξη</option>
+                      <option style="background-color:black">30 Λεπτά πριν την έναρξη</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Λήξη</td>
+                  <td>
+                    <select class="selectpicker">
+                      <option style="background-color:black">Σύμφωνα με το πρόγραμμα</option>
+                      <option style="background-color:black">5 Λεπτά μετά την λήξη</option>
+                      <option style="background-color:black">10 Λεπτά μετά την λήξη</option>
+                      <option style="background-color:black">15 Λεπτά μετά την λήξη</option>
+                      <option style="background-color:black">20 Λεπτά μετά την λήξη</option>
+                      <option style="background-color:black">25 Λεπτά μετά την λήξη</option>
+                      <option style="background-color:black">30 Λεπτά μετά την λήξη</option>
+                    </select>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+  </div>
+
+<!-- EΞΟΙΚΟΝΟΜΗΣΗ ΕΝΕΡΓΕΙΑΣ -->
+  <div id="powerSaveOptions" class="hidden">
+      <div class="col-md-7">
+        <h4>Ενεργοποίηση εξοικονόμησης ενέργειας μετά από</h4>
+        <table class="langMenu margLeft">
+          <tbody>
+            <tr>
+              <td>
+                <select class="selectpicker">
+                  <option style="background-color:black">Απενεργοποίηση</option>
+                  <option style="background-color:black">5  Λεπτά</option>
+                  <option style="background-color:black">10 Λεπτά</option>
+                  <option style="background-color:black">30 Λεπτά </option>
+                  <option style="background-color:black">1 Ώρα</option>
+                </select>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+</div>
+
+  <!-- Ήχος & Υπότιτλοι -->
+<div id="soundAndSubtitles" class="hidden">
+      <div class="col-md-3">
+            <div id="sidebar-wrapper systima">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                  Ήχος & Υπότιτλοι
+                </li>
+                <li>
+                    <a href="#" onclick="showSubSettings()">Υπότιτλοι</a>
+                </li>
+                <li>
+                    <a href="#" onclick="showSoundSettings()">Γλώσσα ήχου</a>
+                </li>
+                <li>
+                    <a href="#" onclick="showSoundType()">Είδος ήχου</a>
+                </li>
+                <li>
+                    <a href="#" onclick="showSoundDelay()">Υστέρηση ήχου</a>
+                </li>
+              </ul>
+        </div>
+      </div>
+
+      <!-- Υπότιτλοι -->
+      <div id="subSettings" class="hidden">
+           <div class="col-md-7">
+             <h4>Εμφάνιση Υποτίτλων</h4>
+           <table class="table langMenu">
+             <tbody>
+               <tr class="langTableRow">
+                 <td> <input type="checkbox" id="yesShowSubs" onclick="yesShowSubs()"> <label for="yesShowSubs"><span></span></label></td>
+                 <td>
+                   <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="yesShowSubs()">Ναι</button> </div>
+                 </td>
+               </tr>
+                 <tr class="langTableRow">
+                   <td> <input type="checkbox" id="noShowSubs" onclick="noShowSubs()"> <label for="noShowSubs"><span></span></label> </td>
+                   <td>
+                     <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="noShowSubs()">Όχι</button> </div>
+                  </td>
+                 </tr>
+             </tbody>
+           </table>
+         </div>
+     </div>
+
+     <!-- Γλώσσα ήχου -->
+     <div id="soundSettings" class="hidden">
+          <div class="col-md-7">
+            <h4>Επιλέξτε γλώσσα ήχου</h4>
+            <table class="table langMenu">
+              <tbody>
+                <tr class="langTableRow">
+                  <td> <input type="checkbox" id="engSound" onclick="engSound()"> <label for="engSound"><span></span></label> </td>
+                  <td>
+                    <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="engSound()">Αγγλικά</button> </div> </td>
+                </tr>
+                  <tr class="langTableRow">
+                    <td> <input type="checkbox" id="grSound" onclick="grSound()"> <label for="grSound"><span></span></label> </td>
+                    <td>
+                      <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="grSound()">Ελληνικά</button> </div> </td>
+                  </tr>
+                  <tr class="langTableRow">
+                    <td> <input type="checkbox" id="originalSound" onclick="originalSound()"> <label for="originalSound"><span></span></label> </td>
+                    <td>
+                      <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="originalSound()">Πρωτότυπη</button> </div> </td>
+                  </tr>
+              </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Είδος ήχου-->
+    <div id="soundType" class="hidden">
+         <div class="col-md-7">
+           <h4>Επιλέξτε Είδος Ήχου</h4>
+           <table class="table langMenu">
+             <tbody>
+               <tr class="langTableRow">
+                 <td> <input type="checkbox" id="stereoType" onclick="stereoType()"> <label for="stereoType"><span></span></label></td>
+                 <td>
+                   <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="stereoType()">Στερεοφωνικός</button> </div></td>
+               </tr>
+                 <tr class="langTableRow">
+                   <td> <input type="checkbox" id="multiType" onclick="multiType()"> <label for="multiType"><span></span></label></td>
+                   <td>
+                     <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="multiType()">Πολυκάναλος</button> </div></td>
+                 </tr>
+                 <tr class="langTableRow">
+                   <td> <input type="checkbox" id="monoType" onclick="monoType()"> <label for="monoType"><span></span></label></td>
+                   <td>
+                     <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="monoType()">Μονοφωνικός</button> </div></td>
+                 </tr>
+             </tbody>
+           </table>
+       </div>
+    </div>
+    <!-- Υστέρηση ήχου -->
+    <div id="soundDelay" class="hidden">
+         <div class="col-md-7">
+           <h4>Επιλογή υστέρησης ήχου</h4>
+           <table class="langMenu margLeft">
+             <tbody>
+               <tr>
+                 <td>
+                   <select class="selectpicker">
+                     <option style="background-color:black">0 ms</option>
+                     <option style="background-color:black">10 ms</option>
+                     <option style="background-color:black">20 ms</option>
+                     <option style="background-color:black">40 ms</option>
+                     <option style="background-color:black">60 ms</option>
+                     <option style="background-color:black">80 ms</option>
+                     <option style="background-color:black">100 ms</option>
+                   </select>
+                 </td>
+               </tr>
+             </tbody>
+           </table>
+       </div>
+    </div>
+</div>
+<!-- Ρυθμίσεις Βίντεο -->
+<div id="videoSettings" class="row hidden">
+  <div class="col-md-3">
+        <div id="sidebar-wrapper systima">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+              Ρυθμίσεις Βίντεο
+            </li>
+            <li>
+                <a href="#" onclick="showResolutionAnalysis()">Αναλογία και Ανάλυση</a>
+            </li>
+            <li>
+                <a href="#" onclick="showScreenSettings()">Ρυθμίσεις Οθόνης</a>
+            </li>
+            <li>
+                <a href="#" onclick="showScartSettings()">Ρυθμίσεις Scart</a>
+            </li>
+          </ul>
+    </div>
+  </div>
+
+  <!-- Αναλογία και Ανάλυση -->
+  <div id="resolutionAnalysis" class="hidden">
+       <div class="col-md-7">
+         <h4>Επιλέξτε Aνάλυση Οθόνης </h4>
+       <table class="table langMenu">
+         <tbody>
+           <tr class="langTableRow">
+             <td> <input type="checkbox" id="typicalFourToThree" onclick="typicalFourToThree()"><label for="typicalFourToThree"><span></span></label> </td>
+             <td>
+               <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="typicalFourToThree()">4:3 Τυπική Ανάλυση</button> </div></td>
+           </tr>
+             <tr class="langTableRow">
+               <td> <input type="checkbox" id="typicalSixteenToNine"  onclick="typicalSixteenToNine()"><label for="typicalSixteenToNine"><span></span></label> </td>
+               <td>
+                 <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="typicalSixteenToNine()">16:9 Τυπική Ανάλυση</button> </div></td>
+             </tr>
+             <tr class="langTableRow">
+               <td> <input type="checkbox" id="highSevenTwentyPi"  onclick="highSevenTwentyPi()"><label for="highSevenTwentyPi"><span></span></label> </td>
+               <td>
+                 <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="highSevenTwentyPi()">16:9 720P Σε οθόνες Υψηλής Ανάλυσης</button> </div></td>
+             </tr>
+             <tr class="langTableRow">
+               <td> <input type="checkbox" id="highTenEighty"  onclick="highTenEighty()"><label for="highTenEighty"><span></span></label> </td>
+               <td>
+                 <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="highTenEighty()">16:9 1080i Σε οθόνες Υψηλής Ανάλυσης</button> </div></td>
+             </tr>
+             <tr class="langTableRow">
+               <td> <input type="checkbox" id="highTenEightyPi"  onclick="highTenEightyPi()"><label for="highTenEightyPi"><span></span></label> </td>
+               <td>
+                 <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="highTenEightyPi()">16:9 1080p Σε οθόνες Υψηλής Ανάλυσης</button> </div></td>
+             </tr>
+         </tbody>
+       </table>
+     </div>
+  </div>
+  <!-- Ρυθμίσεις Οθόνης -->
+  <div id="screenSettings" class="hidden">
+      <div class="col-md-7">
+        <h4>Επιλέξτε κλίμακα video</h4>
+        <table class="table langMenu">
+          <tbody>
+            <tr class="langTableRow">
+              <td> <input type="checkbox" id="fullScreen" onclick="fullScreen()"> <label for="fullScreen"><span></span></label></td>
+              <td>
+                <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="fullScreen()">Πλήρης Οθόνη</button> </div></td>
+            </tr>
+              <tr class="langTableRow">
+                <td> <input type="checkbox" id="normalScreen" onclick="normalScreen()"> <label for="normalScreen"><span></span></label></td>
+                <td>
+                  <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="normalScreen()">Κανονική οθόνη</button> </div></td>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+  <!-- Ρυθμίσεις Scart-->
+  <div id="scartSettings" class="hidden">
+     <div class="col-md-7">
+       <h4>Scart</h4>
+       <table class="table langMenu">
+         <tbody>
+           <tr class="langTableRow">
+             <td> <input type="checkbox" id="rgb" onclick="rgb()"> <label for="rgb"><span></span></label></td>
+             <td>
+               <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="rgb()">RGB</button> </div></td>
+           </tr>
+             <tr class="langTableRow">
+               <td> <input type="checkbox" id="composite" onclick="composite()"> <label for="composite"><span></span></label></td>
+               <td>
+                 <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="composite()">Composite</button> </div></td>
+             </tr>
+         </tbody>
+       </table>
+   </div>
+  </div>
+</div>
+
+<!-- ΣΥΣΤΗΜΑ -->
+<div id="systema" class="row hidden">
+   <div class="col-md-3">
+         <div id="sidebar-wrapper systima">
+         <ul class="sidebar-nav">
+             <li class="sidebar-brand">
+               Σύστημα
+             </li>
+             <li>
+                 <a href="#" onclick="showSystemInfo()">Πληροφορίες</a>
+             </li>
+             <li>
+                 <a href="#" onclick="checkSignal()">Έλενγχος Δορ.Σήματος</a>
+             </li>
+             <li>
+                 <a href="#" onclick="showNetworkStatus()">Κατάσταση Δικτύου*</a>
+             </li>
+         </ul>
+     </div>
+   </div>
+
+ <!-- ΠΛΗΡΟΦΟΡΙΕΣ -->
+  <div id="systemInfo" class="hidden">
+      <div class="col-md-7 systemStyling">
+        <div id="pageOne">
+         Αριθμός κάρτας: 0000 0000 0000<br>
+         Σειριακός Αριθμός STB: 5280234000000000<br>
+         Διευθυνση MAC: 44:32:C8:00:00:00<br>
+         Ταυτ.Συνδρομητή: 0000<br>
+         Μοντέλο Αποκωδικοποιητή: NS1110H<br>
+         Kατάσταση Σκληρού Δίσκου: <span id="pvrINFOstatus">Μή διαθέσιμος</span><br>
+         Διαθέσιμος Σκληρός Δίσκος: <span id="remainingPVR">Μή διαθέσιμος</span><br>
+         Firmware Version: 2.2.1-1<br>
+         EPG Version: 7203<br>
+         Έκδοση Λειτουργικού: Linux 3.4.107-Zenterio-3.0-z mips<br>
+         Πακέτο: 0x615C<br>
+         Τελευταία Επανεκκίνηση: 15:17 24/06 2016<br>
+         Chip ID: 3400042000<br>
+       </div>
+       <div id="pageTwo" class="hidden">
+        Πραγματική Ώρα: <span id="dateDiv3">____</span><br>
+        Κατάσταση Δέκτη 1: σε σύνδεση<br>
+        Κατάσταση Δέκτη 2: σε σύνδεση<br>
+        Έκδοση Verifier: 3.166.2014.112<br>
+        <p class="verifier">(80.BCM_mipsel_linux_ucllbc_gcc_4.5.3-1.3)</p>
+        <p class="verifier">Mar 16 2015 18:14:42</p>
+        Card Image Version: 65024<br>
+        CWE:Y Y N<br>
+        <p class="verifier2">6E736B2043C06F024AA88882026D8F8A 02 11 07 N 9110 Y</p>
+        <p class="verifier2">-N NN</p>
+        Manufacturer ID: 0xce<br>
+        Model ID: 0x2f<br>
+        Hardware ID: 0x42<br>
+        BL2 Model ID: 0x3f<br>
+      </div>
+    <div id="systemInfoButtons">
+      <button type="button" onclick="showPageOne()" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-backward" aria-hidden="true"></i></button>
+      <span id="oneOfTwo">1</span>/2
+      <button type="button" onclick="showPageTwo()" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-forward" aria-hidden="true"></i></button>
+    </div>
+ </div>
+</div>
+
+  <!-- ΕΛΕΝΓΧΟΣ ΔΟΡΥΦΟΡΙΚΟΥ ΣΗΜΑΤΟΣ -->
+   <div id="checkSignal" class="hidden">
+        <div class="col-md-7">
+          <h3> Έλενγχος Δορ.Σήματος </h3><br><br><br><br><br>
+          Ισχύς σήματος: 64%<br><br>
+          <input type="range" min="0" max="100" value="64" /> <br>
+          Ποιότητα σήματος: 95%<i class="fa fa-lock fa-4x pull-right" aria-hidden="true"></i><br>
+          <input type="range" min="0" max="100" value="95" />
+          Συχνότητα:12475 MHz<br>
+          Ρυθμός μετάδοσης:27500 lvlsymb/s<br>
+          FEC: 2/3<br>
+        </div>
+   </div>
+
+<!-- ΚΑΤΑΣΤΑΣΗ ΔΙΚΤΥΟΥ -->
+ <div id="networkStatus" class="hidden">
+      <div class="col-md-7 systemStyling">
+          Διεύθυνση IP: 10.**.*.**<br>
+          Subnet Mask: 255.255.0.0<br>
+          Gateway IP: 10.38.0.1<br>
+          DNS Servers: 10.0.10.251<br>
+          NTP Servers: 10.0.10.31<br>
+          Κατάσταση ΙΡ: Σε σύνδεση<br>
+      </div>
+ </div>
+</div>
+
+
+<!-- PIN for Restore-->
+   <div id="showPin" class="recordconfirm hidden">
+          Παρακαλώ εισάγετε τον Kωδικό PIN του Διαχειριστή<br>
+          <input type="password" name="password" class="" id="pin"><br>
+          <button type="button" class="btn btn-lg btn-default confirm" onclick="showRestore()">OK</button>
+          <button type="button" class="btn btn-lg btn-default confirm" onclick="cancelRestore()">Ακύρωση</button>
+   </div>
+
+<!-- Reboot-->
+  <div id="reboot" class="recordconfirm hidden">
+         Επιθυμείτε επανεκκίνηση του αποκωδικοποιητή(STB);<br>
+         <button type="button" class="btn btn-lg btn-default confirm" onclick="rebootOK()" data-toggle="modal" data-target="#agentInfo">OK</button>
+         <button type="button" class="btn btn-lg btn-default confirm" onclick="rebootCancel()">Ακύρωση</button>
+  </div>
+
+<!-- Επαναφορά -->
+<div id="restore" class="row hidden">
+   <div class="col-md-3">
+         <div id="sidebar-wrapper systima">
+         <ul class="sidebar-nav">
+             <li class="sidebar-brand">
+               Επαναφορά
+             </li>
+             <li>
+                 <a href="#" onclick="showFormat()">Διαμόρφωση</a>
+             </li>
+             <li>
+                 <a href="#" onclick="showFactoryReset()">Επαναφορά Ρυθμίσεων</a>
+             </li>
+         </ul>
+     </div>
+   </div>
+
+ <!-- ΔΙΑΜΟΡΦΩΣΗ -->
+  <div id="format" class="hidden">
+    <div class="col-md-7">
+      <div id="nohddAvailable" class="langMenu systemStyling hidden">
+        Δεν υπάρχει διαθέσιμος σκληρός δίσκος. <br>
+      </div>
+      <div id="hddAvailable" class="systemStyling hidden">
+        <h4>Πληροφορίες Σκληρού Δίσκου</h4><br><br><br><br>
+        <div class="pullCenter">
+          Συνολική Χωρητικότητα: 449.47 GB<br>
+          Σε χρήση: 30.30 GB<br>
+          Ελεύθερος Χώρος: 419.17 GB<br>
+          <div class="pull-left">Χρήση:</div>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="6" aria-valuemin="0" aria-valuemax="100" style="width: 6%;">6.49%
+              <span class="sr-only">6.49% Complete</span>
+            </div>
+          </div>
+        </div>
+        <br><br><br><br>
+      <div class="pull-right"><button type="button" class="btn btn-lg btn-danger" onclick="formatDialog()"></button> Διαμόρφωση Δίσκου</div>
+      </div>
+      <div id="confFormat" class="recordconfirm langMenu hidden">
+             Η διαμόρφωση σκληρού δίσκου θα διαγράψει το αποθηκευμένο περιεχόμενο.Παρακαλώ επιβεβαιώστε την επιλογή σας.<br>
+             <button type="button" class="btn btn-lg btn-default confirm" onclick="okFormat()" data-toggle="modal" data-target="#agentInfo">Ναι</button>
+             <button type="button" class="btn btn-lg btn-default confirm" onclick="cancelFormat()">Όχι</button>
+      </div>
+    </div>
+</div>
+
+  <!-- ΕΠΑΝΑΦΟΡΑ ΕΡΓΟΣΤΑΣΙΑΚΩΝ ΡΥΘΜΙΣΕΩΝ -->
+   <div id="factoryReset" class="hidden">
+        <div class="col-md-7">
+            Επιθυμείτε επαναφορά στις εργοστασιακές ρυθμίσεις<br>
+            <button type="button" class="btn btn-lg btn-default buttonsSettings" onclick="cancelfactoryReset()">Όχι</button>
+            <button type="button" class="btn btn-lg btn-default buttonsSettings" onclick="okRestore()" data-toggle="modal" data-target="#agentInfo">Ναι</button>
+        </div>
+   </div>
+</div>
+
+<!-- ΔΙΚΑΙΩΜΑΤΑ ΧΡΗΣΤΩΝ -->
+<div id="userPriviledges" class="row hidden">
+    <div class="col-md-3">
+      <table id="" class="table">
+          <tbody>
+              <tr class="langTableRow">
+                <th style="padding:5px"><a href="#" onclick="showSubMenuUP()"><img class="pull-right" src="img/user1.jpg"></a></th>
+                  <td style="padding:5px">Maria<br>Διαχειριστής</td>
+              </tr>
+              <tr class="langTableRow">
+                <th style="padding:5px"><a href="#" onclick="showSubMenuUP2()"><img class="pull-right" src="img/user2.jpg"></a></th>
+                  <td style="padding:5px">OteTvUser</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <div id="uPSubMenu" class="col-md-4 hidden">
+          <div id="sidebar-wrapper systima">
+          <ul class="sidebar-nav">
+              <li class="sidebar-brand">
+                <span class="menutitle">Hybrid</span>
+              </li>
+              <li>
+                  <a href="#" onclick="showHybridChangePin()">Αλλαγή κωδικού PIN</a>
+              </li>
+              <li>
+                  <a href="#" onclick="showHybridParentalControl()">Γονικός έλενγχος</a>
+              </li>
+              <li>
+                  <a href="#" onclick="showHybridChannels()">Κανάλια</a>
+              </li>
+              <li>
+                  <a href="#" onclick="showHybridMovies()">Ταινίες</a>
+              </li>
+              <li>
+                  <a href="#" onclick="showRentalLimit()">Όριο ενοικιάσεων</a>
+              </li>
+            <li class="sidebar-brand">
+              <span class="menutitle">Δορυφορική λειτουργεία</span>
+            </li>
+            <li>
+                <a href="#" onclick="showHybridChangePin()">Αλλαγή κωδ. Κάρτας</a>
+            </li>
+            <li>
+                <a href="#" onclick="showHybridParentalControl()">Δορυφ.Γονικός έλενγχος</a>
+            </li>
+            <li>
+                <a href="#" onclick="showHybridChannels()">Δορυφ. Κανάλια</a>
+            </li>
+          </ul>
+      </div>
+    </div>
+    <div id="hybridChangePin" class="col-md-5 hidden">
+      <span id="cpUser"><h4>Maria</h4></span>
+      <span id="isAdmin">Διαχειριστής</span>
+      <table class="table central3cols">
+        <tbody>
+          <tr>
+            <td>Κωδικός PIN:</td>
+            <td><input type="password" name="pinCode" value=""></td>
+          </tr>
+          <tr>
+            <td>Νέος Κωδικός PIN:</td>
+            <td><input type="password" name="newPinCode" value=""></td>
+          </tr>
+          <tr>
+            <td>Επιβεβαίωση PIN:</td>
+            <td><input type="password" name="confirmPin" value=""></td>
+          </tr>
+          <tr>
+            <td colspan="2" style="padding-top:10px" class="buttonBottom"><button type="button" class="btn btn-lg btn-default" onclick="changedPin()" data-toggle="modal" data-target="#agentInfo">Αποθήκευση</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="hybridParentalControl" class="col-md-5 hidden">
+      <table class="table parentalControl">
+        <tbody>
+          <tr class="langTableRow">
+            <td> <input type="checkbox" id="rombos" onclick="rombos()" name="rombos" /> <label for="rombos"><span></span></label> </td>
+            <td>
+              <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="rombos()"><img src="img/rombos.png" width="24" height="24">  Κατάλληλο για όλους</button> </div>
+            </td>
+          </tr>
+            <tr class="langTableRow">
+              <td> <input type="checkbox" id="circle" onclick="circle()"> <label for="circle"><span></span></label></td>
+              <td>
+                <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="circle()"><img src="img/circle.png" width="24" height="24">  Κατάλληλο, Επιθυμητή η γονική συναίνεση</button> </div></td>
+            </tr>
+            <tr class="langTableRow">
+              <td> <input type="checkbox" id="triangle"  onclick="triangle()"> <label for="triangle"><span></span></label></td>
+              <td>
+                <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="triangle()"><img src="img/triangle.png" width="24" height="24">  Κατάλληλο, Απαραίτητη η γον. συναίνεση</button> </div></td>
+            </tr>
+            <tr class="langTableRow">
+              <td> <input type="checkbox" id="square"  onclick="square()"> <label for="square"><span></span></label></td>
+              <td>
+                <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="square()"><img src="img/square.png" width="24" height="24">  Κατάλληλο για ανηλίκους άνω των 15</button> </div></td>
+            </tr>
+            <tr class="langTableRow">
+              <td> <input type="checkbox" id="over18"  onclick="over18()"> <label for="over18"><span></span></label></td>
+              <td>
+                <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="over18()"><img src="img/over18.png" width="24" height="24">  Κατάλληλο για ενηλίκους</button> </div></td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="hybridChannels" class="col-md-4 hidden">
+    <table class="table table-bordered hbchannels">
+      <tbody>
+        <tr class="">
+          <td><input id="cbc1" type="checkbox" /><label for="cbc1"><span></span></label>   100 Promo Channel (iptv)</td>
+        </tr>
+        <tr class="">
+          <td><input id="cbc2" type="checkbox" /><label for="cbc2"><span></span></label>   101 ΒΟΥΛΗ</td>
+        </tr>
+        <tr class="">
+          <td><input id="cbc3" type="checkbox" /><label for="cbc3"><span></span></label>   102 ΕΡΤ 1</td>
+        </tr>
+        <tr class="">
+          <td><input id="cbc4" type="checkbox" /><label for="cbc4"><span></span></label>   103 ΕΡΤ 2 </td>
+        </tr>
+        <tr class="">
+          <td><input id="cbc5" type="checkbox" /><label for="cbc5"><span></span></label>   104 ΕΡΤ 3</td>
+        </tr>
+        <tr class="">
+          <td><input id="cbc6" type="checkbox" /><label for="cbc6"><span></span></label>   106 MEGA</td>
+        </tr>
+        <tr class="">
+          <td><input id="cbc7" type="checkbox" /><label for="cbc7"><span></span></label>   107 ANT1</td>
+        </tr>
+        <tr class="">
+          <td><input id="cbc8" type="checkbox" /><label for="cbc8"><span></span></label>   108 ALPHA</td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-backward" aria-hidden="true"></i></button>
+    1/11
+    <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-forward" aria-hidden="true"></i></button>
+  </div>
+
+    <div id="hybridMovies"class="col-md-4 hidden">
+      <table class="table table-bordered hbchannels">
+        <tbody>
+          <tr class="">
+            <td><input id="cbm1" type="checkbox" /><label for="cbm1"><span></span></label>   Πρεμιέρες</td>
+          </tr>
+          <tr class="">
+            <td><input id="cbm2" type="checkbox" /><label for="cbm2"><span></span></label>   Πρεμίερες HD</td>
+          </tr>
+          <tr class="">
+            <td><input id="cbm3" type="checkbox" /><label for="cbm3"><span></span></label>   Κατηγορίες</td>
+          </tr>
+          <tr class="">
+            <td><input id="cbm4" type="checkbox" /><label for="cbm4"><span></span></label>   Αλφαβητικά</td>
+          </tr>
+          <tr class="">
+            <td><input id="cbm5" type="checkbox" checked="true"/><label for="cbm5"><span></span></label>   Ενήλικες</td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-backward" aria-hidden="true"></i></button>
+      1/1
+      <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-forward" aria-hidden="true"></i></button>
+    </div>
+
+    <div id="rentalLimit" class="col-md-4 hidden">
+      <h4>Παρακαλώ ορίσατε ανώτατο ποσό για ενοικιάσεις Cinema On Demand. To ποσό ορίζεται ανά ημερολογιακό μήνα.</h4>
+      <br>
+      <br>
+      <br>
+      <h4>Μηνιαίο υπόλοιπο</h4>
+      <table class="margLeft">
+        <tbody>
+          <tr>
+            <td>
+              <select class="selectpicker">
+                <option style="background-color:black">Χωρίς Όριο</option>
+                <option style="background-color:black">0  &euro;</option>
+                <option style="background-color:black">5  &euro;</option>
+                <option style="background-color:black">10  &euro;</option>
+                <option style="background-color:black">15  &euro;</option>
+                <option style="background-color:black">20  &euro;</option>
+                <option style="background-color:black">30  &euro;</option>
+                <option style="background-color:black">40  &euro;</option>
+              </select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
+
+<!-- ΔΙΑΧΕΙΡΗΣΗ ΧΡΗΣΤΩΝ -->
+<div id="userManagement" class="row hidden">
+    <div class="col-md-3">
+          <div id="sidebar-wrapper systima">
+          <ul class="sidebar-nav">
+              <li class="sidebar-brand">
+                Διαχείρηση Χρηστών
+              </li>
+              <li>
+                  <a href="#" onclick="showChangeUserCredentials()">Αλλαγή Στοιχείων</a>
+              </li>
+              <li>
+                  <a href="#" onclick="showAddRemoveUser()">Προσθήκη/Διαγραφή</a>
+              </li>
+              <li>
+                  <a href="#" onclick="showFbTwitter()">Facebook & Twitter</a>
+              </li>
+              <li>
+                  <a href="#" onclick="showChangeUser()">Αλλαγή Χρήστη</a>
+              </li>
+          </ul>
+      </div>
+    </div>
+
+    <div id="changeUserCredentials" class="col-md-9 hidden">
+      <table class="table userCredentials">
+        <tbody>
+          <tr>
+            <td>Εικόνα: </td>
+            <td style="text-align:center">
+             <p><button type="button" class="btn btn-lg btn-default chevron" onclick="userEditChangeImg()"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></button>
+                <img id="editCredentialsIMG" src="img/user1.jpg">
+                <button type="button" class="btn btn-lg btn-default chevron" onclick="userEditChangeImg()"><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></button></p>
+            </td>
+          </tr>
+          <tr>
+            <td>Όνομα: </td>
+            <td><input type="text" name="userName" value="203555555"></td>
+          </tr>
+          <tr>
+            <td>Όνομ. Συνδ. ΟΤΕ TV GO: </td>
+            <td><input type="text" name="userNameGo" value="203555555"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td colspan="2" style="padding-top:10px" class="buttonBottom"><button type="button" style="width:100%" class="btn btn-lg btn-default" onclick="changeCredentialsConfirm()" data-toggle="modal" data-target="#agentInfo">Αποθήκευση</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="addRemoveUser" class="col-md-9 hidden">
+      <table id="" class="table">
+          <tbody>
+              <tr class="langTableRow">
+                <th style="padding:5px;width: 10px;"><img class="pull-left" src="img/user1.jpg"></th>
+                  <td style="padding:5px"><h4>Maria</h4>Διαχειριστής</td>
+              </tr>
+              <tr id="delUser" class="langTableRow">
+                <th style="padding:5px;width: 10px;"><img onclick="showDeleteUser()" class="pull-left" src="img/user2.jpg"></th>
+                  <td style="padding:5px"><h4 onclick="showDeleteUser()">OteTvUser</h4></td>
+              </tr>
+              <tr class="langTableRow">
+                <th style="padding:5px;width: 10px;"><img class="pull-left" src="img/adduser.jpg" onclick="showAddUser()"></th>
+                  <td style="padding:5px"><h4><a href="#" onclick="showAddUser()">Προσθήκη Χρήστη</a></h4></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+    <div id="deleteUser" class="recordconfirm hidden">
+           Είστε σίγουροι ότι θέλετε να διαγράψετε αυτόν τον Χρήστη;<br>
+           <button type="button" class="btn btn-lg btn-default confirm" onclick="deleteUserConfirm()">Ναι</button>
+           <button type="button" class="btn btn-lg btn-default confirm" onclick="cancelDeleteUser()">Όχι</button>
+    </div>
+
+    <div id="addUser" class="col-md-9 hidden">
+      <table class="table addUser">
+        <tbody>
+          <th colspan="2" style="text-align:center;padding-bottom:10px">Προσθήκη Χρήστη</th>
+          <tr>
+            <td>Εικόνα: </td>
+            <td style="text-align:center"><p><button type="button" class="btn btn-lg btn-default chevron" onclick="userEditChangeImg()"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></button>
+                <img id="editCredentialsIMG2" src="img/user1.jpg">
+                <button type="button" class="btn btn-lg btn-default chevron" onclick="userEditChangeImg()"><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></button></p>
+            </td>
+          </tr>
+          <tr>
+            <td>Όνομα: </td>
+            <td><input type="text" name="userName" class="pull-left"value=""></td>
+          </tr>
+          <tr>
+            <td>Κωδικός PIN: </td>
+            <td><input type="password" name="pinPass" class="pull-left" value=""></td>
+          </tr>
+          <tr>
+            <td>Επιβεβαίωση PIN: </td>
+            <td><input type="password" name="pinPassConfirm" class="pull-left" value=""></td>
+          </tr>
+          <tr>
+            <td style="padding-top:10px" class="buttonBottom"><button type="button" style="width:100%" class="btn btn-lg btn-default pull-right" onclick="addUserConfirm()" data-toggle="modal" data-target="#agentInfo">Αποθήκευση</button></td>
+            <td style="padding-top:10px" class="buttonBottom"><button type="button" style="width:100%" class="btn btn-lg btn-default pull-left" onclick="cancelAddUser()">Ακύρωση</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="fbTwitter" class="col-md-9 hidden">
+      <table id="" class="table">
+          <tbody>
+              <tr>
+                <th style="padding:5px;width: 10px;"><img class="pull-left" src="img/user1.jpg"></th>
+                  <td style="padding:5px"><h4>Maria</h4></td>
+              </tr>
+              <tr class="langTableRow">
+                <th style="padding:5px;width: 10px;"><img class="pull-left" src="img/fb.png"></th>
+                  <td style="padding:5px"><h4>Facebook</h4></td>
+                  <td style="padding:5px"><button type="button" class="btn btn-lg btn-default pull-right" onclick="fbTwitterEmail()">Σύνδεση</button></td>
+              </tr>
+              <tr class="langTableRow">
+                <th style="padding:5px;width: 10px;"><img class="pull-left" src="img/twitter.png"></th>
+                  <td style="padding:5px"><h4>Twitter</h4></td>
+                  <td style="padding:5px"><button type="button" class="btn btn-lg btn-default pull-right" onclick="fbTwitterEmail()">Σύνδεση</button></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <div id="fbTwitterEmail" class="recordconfirm hidden ">
+           Παρακαλώ εισάγετε το email σας για να λάβετε ένα link επιβεβαίωσης<br>
+           <input type="email" name="fbtwittermail" class="" id="fbtwittermail"><br>
+           <button type="button" class="btn btn-lg btn-default confirm" onclick="fbConfirm()" data-toggle="modal" data-target="#agentInfo">OK</button>
+           <button type="button" class="btn btn-lg btn-default confirm" onclick="fbCancel()">Ακύρωση</button>
+    </div>
+
+    <div id="changeUser" class="col-md-9 hidden">
+      <div class="central3cols">
+        <button type="button" class="btn btn-lg btn-default pullCenter" onclick="changeUserConfirm()" data-toggle="modal" data-target="#agentInfo">Αλλαγή Χρήστη</button>
+      </div>
+    </div>
+
+</div>
+
+<!-- ΑΓΑΠΗΜΕΝΑ ΚΑΝΑΛΙΑ ΕΠΙΛΟΓΗ ΑΠΟ ΛΟΓΑΡΙΑΣΜΟ ΧΡΗΣΤΗ -->
+<div id="favChannels" class="row hidden">
+     <div class="col-md-12">
+       <h4>Αγαπημένα Κανάλια </h4>
+     <table class="table table-bordered favTable">
+       <tbody>
+         <tr class="">
+           <td><input type="checkbox" id="promoChan" name="promoChan" onchange="showFavSaveBtn()"/> <label for="promoChan"><span></span></label>   100 Promo Channel (iptv)</td>
+           <td><input type="checkbox" id="starChan" name="starChan" onchange="showFavSaveBtn()"/> <label for="starChan"><span></span></label>   109 STAR</td>
+         </tr>
+         <tr class="">
+           <td><input type="checkbox" id="grParlia" name="grParlia" onchange="showFavSaveBtn()"/> <label for="grParlia"><span></span></label>   101 ΒΟΥΛΗ</td>
+           <td><input type="checkbox" id="skychan" name="skychan" onchange="showFavSaveBtn()"/> <label for="skychan"><span></span></label>  110 ΣΚΑΪ</td>
+         </tr>
+         <tr class="">
+           <td><input type="checkbox" id="ert1" name="ert1" onchange="showFavSaveBtn()"/> <label for="ert1"><span></span></label>   102 ΕΡΤ 1</td>
+           <td><input type="checkbox" id="epsilontv" name="epsilontv" onchange="showFavSaveBtn()"/> <label for="epsilontv"><span></span></label>   111 Epsilon TV</td>
+         </tr>
+         <tr class="">
+           <td><input type="checkbox" id="ert2" name="ert2" onchange="showFavSaveBtn()"/> <label for="ert2"><span></span></label>   103 ΕΡΤ 2 </td>
+           <td><input type="checkbox" id="euronews" name="euronews" onchange="showFavSaveBtn()"/> <label for="euronews"><span></span></label>   112 Euronews</td>
+         </tr>
+         <tr class="">
+           <td><input type="checkbox" id="ert3" name="ert3" onchange="showFavSaveBtn()"/> <label for="ert3"><span></span></label>   104 ΕΡΤ 3</td>
+           <td><input type="checkbox" id="otehistory" name="otehistory" onchange="showFavSaveBtn()"/> <label for="otehistory"><span></span></label>   151 OTE History</td>
+         </tr>
+         <tr class="">
+           <td><input type="checkbox" id="megachannel" name="megachannel" onchange="showFavSaveBtn()"/> <label for="megachannel"><span></span></label>   106 MEGA</td>
+           <td><input type="checkbox" id="startrek" name="startrek" onchange="showFavSaveBtn()"/> <label for="startrek"><span></span></label>  200 OTE Cinema Star Trek HD</td>
+         </tr>
+         <tr class="">
+           <td><input type="checkbox" id="ant1ch" name="ant1ch" onchange="showFavSaveBtn()"/> <label for="ant1ch"><span></span></label>   107 ANT1</td>
+           <td><input type="checkbox" id="otecinema1" name="otecinema1" onchange="showFavSaveBtn()"/> <label for="otecinema1"><span></span></label>  201 OTE Cinema 1 HD</td>
+         </tr>
+         <tr class="">
+           <td><input type="checkbox" id="alphachan" name="alphachan" onchange="showFavSaveBtn()"/> <label for="alphachan"><span></span></label>   108 ALPHA</td>
+           <td><input type="checkbox" id="otecinema2" name="otecinema2" onchange="showFavSaveBtn()"/> <label for="otecinema2"><span></span></label>  202 OTE Cinema 2 HD</td>
+         </tr>
+       </tbody>
+     </table>
+     <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-backward" aria-hidden="true"></i></button>
+     1/7
+     <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-forward" aria-hidden="true"></i></button>
+     <br>
+     <button type="button" onclick="okButton()" class="btn btn-default btn-circle inforbutton" data-target="#agentInfo" data-toggle="modal">OK</button> για προσθήκη ή αφαίρεση  από τα Αγαπημένα
+        <div id="favUAButtons" class="pull-right">
+           <button type="button" class="btn btn-lg btn-success" onclick="changeFavPosition()" data-toggle="modal" data-target="#agentInfo"></button> Αλλαγή Θέσης
+           <button type="button" class="btn btn-lg btn-warning" onclick="yellowButton()"></button> <span id="checkALLspan">Επιλογή Όλων</span>
+           <span id="favSaveBtn" class="hidden"><button type="button" class="btn btn-lg btn-primary" onclick="blueButton()" data-toggle="modal" data-target="#agentInfo"></button> Αποθήκευση Αλλαγών
+        </div>
+   </div>
+</div>
+
+<!-- ΟΙ ΕΓΓΡΑΦΕΣ ΜΟΥ -->
+<div id="myRecordings" class="row recStyle hidden">
+  <h4>Εγγραφές</h4>
+  <div class="row navigationPill">
+     <div class="col-md-1">
+        <button type="button" class="btn btn-lg btn-default chevron" onclick="leftAddActive()"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></button>
+     </div>
+     <div class="col-md-10">
+        <ul class="nav nav-pills pull-left">
+          <li id="all" role="presentation" class="active one-edge-shadow"><a href="#">Όλα</a></li>
+          <li id="simpleProg" role="presentation"><a href="#">Απλοί Τίτλοι</a></li>
+          <li id="series" role="presentation"><a href="#">Σειρές</a></li>
+        </ul>
+     </div>
+     <div class="col-md-1">
+       <button type="button" class="btn btn-lg btn-default chevron" onclick="rightAddActive()"><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></button>
+     </div>
+  </div>
+  <div id="allDiv" class="row">
+      <div class="col-md-9">
+      <table class="table favTableMyRecs">
+        <tbody>
+          <tr class="">
+            <td id="myRecs1"><input id="boolSelect" type="checkbox" class="hidethis hidden" /><label for="boolSelect"><span class="hidden hidethis"></span></label>  <a href="#" onclick="recordDescription1()">Ποδόσφαιρο: Βαλένθια-Ράγιο Βαγιεκάνο</a> <span class="pull-right"><img src="img/rec.png" height="30" width="30">11/7</span></td>
+          </tr>
+          <tr class="">
+            <td id="myRecs2"><input id="boolSelect2" type="checkbox" class="hidethis hidden"/><label for="boolSelect2"><span class="hidden hidethis"></span></label>  <a href="#" onclick="recordDescription2()">Elementary K3 E20</a> <span class="pull-right"><img src="img/checkedGreen.png"> 11/7</span></td>
+          </tr>
+          <tr class="">
+            <td id="myRecs3"><input id="boolSelect3" type="checkbox" class="hidethis hidden"/><label for="boolSelect3"><span class="hidden hidethis"></span></label>  <a href="#" onclick="recordDescription3()">Mr.Robot K2 E8</a> <span class="pull-right"><img src="img/recexc.png" height="25" width="25"> 12/7</span> </td>
+          </tr>
+          <tr class="">
+            <td id="myRecs4"><input id="boolSelect4" type="checkbox" class="hidethis hidden"/><label for="boolSelect4"><span class="hidden hidethis"></span></label> <a href="#" onclick="recordDescription4()">Mr.Robot K1</a> <span class="pull-right"><i class="fa fa-folder-open" aria-hidden="true"></i> 11/7</span></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+          <tr class="">
+            <td id="fake1" class="hidden"></td>
+          </tr>
+          <tr class="">
+            <td id="fake2" class="hidden"></td>
+          </tr>
+          <tr class="">
+            <td id="fake3" class="hidden"></td>
+          </tr>
+          <tr class="">
+            <td id="fake4" class="hidden"></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="col-md-3">
+          <span id="descriptionOfProg" class="">
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+          </span>
+          <span>
+            Σκληρός Δίσκος:96% Υπόλοιπο
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="100" style="width: 6%;">
+              </div>
+            </div>
+          </span>
+      </div>
+  </div>
+
+  <div id="insideSeries" class="row hidden">
+      <div class="col-md-9">
+      <table class="table favTableMyRecs">
+        <tbody>
+          <tr class="">
+            <td><i class="fa fa-undo" aria-hidden="true"></i> Mr.Robot K1 E1 <span class="pull-right"></span> </td>
+          </tr>
+          <tr class="">
+            <td><input id="boolSelect" type="checkbox" class="hidethis hidden" /><label for="boolSelect"><span class="hidden hidethis"></span></label> Mr.Robot K1 E1 <span class="pull-right"> <img src="img/checkedGreen.png"> 11/7</span> </td>
+          </tr>
+          <tr class="">
+            <td><input id="boolSelect2" type="checkbox" class="hidethis hidden"/><label for="boolSelect2"><span class="hidden hidethis"></span></label> <span class="verifier"> Mr.Robot K1 E2</span> <span class="pull-right"><img src="img/checkedGreen.png"> 11/7</span></td>
+          </tr>
+          <tr class="">
+            <td><input id="boolSelect3" type="checkbox" class="hidethis hidden"/><label for="boolSelect3"><span class="hidden hidethis"></span></label> <span class="verifier"> Mr.Robot K1 E3</span> <span class="pull-right"><img src="img/checkedGreen.png"> 12/7</span> </td>
+          </tr>
+          <tr class="">
+            <td><input id="boolSelect4" type="checkbox" class="hidethis hidden"/><label for="boolSelect4"><span class="hidden hidethis"></span></label> <span class="verifier"> Mr.Robot K1 E4</span> <span class="pull-right"><img src="img/checkedGreen.png"> 12/7</span></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="col-md-3">
+          <span id="descriptionOfProg2" class="">
+            306 OTE Cinema 4 HD <br> Mr.Robot K2<br>23:00-00:00(60')<img src="img\square.png" height="30" width="30"> <br><br><br><br><br><br><br><br><br><br>
+          </span>
+          <span>
+            Σκληρός Δίσκος:96% Υπόλοιπο
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="100" style="width: 6%;">
+              </div>
+            </div>
+          </span>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-12">
+        <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-backward" aria-hidden="true"></i></button>
+        1/1
+        <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-forward" aria-hidden="true"></i></button>
+      </div>
+      <br>
+      Πατήστε <button type="button" onclick="watchARecord()" data-toggle="modal" data-target="#agentInfo" class="btn btn-default btn-circle inforbutton">OK</button> για προβολή και <button type="button" data-toggle="modal" data-target="#recSynopsis" class="btn btn-default btn-circle inforbutton">i</button> για σύνοψη
+         <div id="favUAButtons" class="pull-right">
+            <button type="button" class="btn btn-lg btn-danger" onclick="" data-toggle="modal" data-target="#deleteArecord"></button> Διαγραφή
+            <button type="button" class="btn btn-lg btn-success" onclick="" data-toggle="modal" data-target="#choicesRec"></button> Επιλογές
+            <button type="button" class="btn btn-lg btn-warning" onclick="yellowButton()"></button> <span id="myRecsCheckALL">Επιλογή</span>
+            <button type="button" class="btn btn-lg btn-primary" onclick="" data-toggle="modal" data-target="#filter"></button> Φίλτρο
+         </div>
+  </div>
+
+  <div class="modal fade" id="deleteArecord" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content centModalRec">
+        <div class="modal-body">
+          Να γίνει διαγραφή;<br>
+          <button type="button" class="btn btn-lg btn-default confirm pull-left buttonRec" data-dismiss="modal" data-toggle="modal" data-target="#recordDeleteMSG">Ναί</button>
+          <button type="button" class="btn btn-lg btn-default confirm buttonRec" data-dismiss="modal">Όχι</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="recordDeleteMSG" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content centModalRec">
+        <div class="modal-body">
+          Η εγγραφή του Mr.Robot K2 E8 διαγράφηκε<br>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="choicesRec" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content centModalRec">
+        <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Επιλογές</h4>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li><a href="#" data-toggle="modal" onclick="cancelAseries()" data-target="#agentInfo" data-dismiss="modal">Ακύρωση εγγραφής σειράς</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#deleteArecord" data-dismiss="modal">Διαγραφή εγγραφής</a></li>
+            <li><a href="#help" data-target="#help" data-toggle="modal" data-dismiss="modal">Βοήθεια</a></li>
+          </ul>
+          <div class="modal-footer">
+            <h3 class="panel-title">  Πατήστε  για <button type="button" class="btn btn-lg btn-default chevron" data-dismiss="modal"><i class="fa fa-undo" aria-hidden="true"></i></button> κλείσιμο </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="filter" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content centModalRecFilter">
+        <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel" style="text-align:center">Κατάσταση Εγγραφής</h4>
+        </div>
+        <div class="modal-body">
+          <table class="table">
+            <tbody>
+              <tr class="langTableRow">
+                <td> <input type="checkbox" id="filterAll" onclick="filterAll()" name="filterAll" /> <label for="filterAll"><span></span></label> </td>
+                <td>
+                  <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="filterAll()">Όλα</button> </div>
+                </td>
+              </tr>
+              <tr class="langTableRow">
+                <td> <input type="checkbox" id="filterRecording" onclick="filterRecording()" name="filterRecording" /> <label for="filterRecording"><span></span></label> </td>
+                <td>
+                  <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="filterRecording()">Σε εγγραφή</button> </div>
+                </td>
+              </tr>
+              <tr class="langTableRow">
+                <td> <input type="checkbox" id="filterCompleted" onclick="filterCompleted()" name="filterCompleted" /> <label for="filterCompleted"><span></span></label> </td>
+                <td>
+                  <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="filterCompleted()">Ολοκληρωμένες</button> </div>
+                </td>
+              </tr>
+              <tr class="langTableRow">
+                <td> <input type="checkbox" id="filterProgrammed" onclick="filterProgrammed()" name="filterProgrammed" /> <label for="filterProgrammed"><span></span></label> </td>
+                <td>
+                  <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="filterProgrammed()">Προγραμματισμένες</button> </div>
+                </td>
+              </tr>
+              <tr class="langTableRow">
+                <td> <input type="checkbox" id="filterInPause" onclick="filterInPause()" name="filterInPause" /> <label for="filterInPause"><span></span></label> </td>
+                <td>
+                  <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="filterInPause()">Σε Παύση</button> </div>
+                </td>
+              </tr>
+              <tr class="langTableRow">
+                <td> <input type="checkbox" id="filterAFailed" onclick="filterAFailed()" name="filterAFailed" /> <label for="filterAFailed"><span></span></label> </td>
+                <td>
+                  <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="filterAFailed()">Αποτυχημένες</button> </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="modal-footer">
+            <h3 class="panel-title">  Πατήστε <button type="button" class="btn btn-lg btn-default chevron" data-dismiss="modal"><i class="fa fa-undo" aria-hidden="true"></i></button> για κλείσιμο </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="recSynopsis" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content centModalSynopsis">
+        <div class="modal-body">
+          <div class="row">
+          <div class="col-md-4">
+                  <div id="sidebar-wrapper systima">
+                  <ul class="sidebar-nav">
+                      <li>
+                          <a href="#agentInfo" onclick="watchARecord()" data-toggle="modal">Προβολή Εγγραφής</a>
+                      </li>
+                      <li>
+                          <a href="#deleteArecord" onclick="" data-toggle="modal" data-dismiss="modal">Διαγραφή Εγγραφής</a>
+                      </li>
+                      <li>
+                          <a href="#share" data-target="#share" data-toggle="modal">Κοινοποίηση</a>
+                      </li>
+                  </ul>
+                </div>
+                </div>
+                <!--  -->
+                 <div class="col-md-8" style="padding:0">
+                   <h3>Mr. Robot Κ2 Ε8</h3>
+                   <h3>204 OTE Cinema 4 HD</h3>
+                   <h4>03:30 - 04:15   26/08(45') <img src="img/square.png"></h4>
+                   <h4>Δραματική σειρά (2016). Ο Έλιοτ αντιλαμβάνεται τις καταστροφικές συνέπειες ενός κενού εξουσίας. Την ίδια στιγμή, οι τριβές μεταξύ των μελών της οργάνωσης fsociety αρχίζουν να γίνονται έντονες,
+                     ενώ η Νταρλίν αναγκάζεται να πάρει δύσκολες αποφάσεις. Παραγωγή: ΗΠΑ.</h4>
+                           <h3 class="panel-title">  Πατήστε  για <button type="button" class="btn btn-lg btn-default chevron" data-dismiss="modal"><i class="fa fa-undo" aria-hidden="true"></i></button> κλείσιμο </h3>
+                </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ΟΙ ΛΗΨΕΙΣ ΜΟΥ -->
+<div id="myDownloads" class="row recStyle hidden">
+  <h4>Οι Λήψεις μου</h4>
+  <div class="row navigationPill">
+     <div class="col-md-1">
+        <button type="button" class="btn btn-lg btn-default chevron" onclick="leftAddActiveDL()"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></button>
+     </div>
+     <div class="col-md-10">
+        <ul class="nav nav-pills pull-left">
+          <li id="allDownloads" role="presentation" class="active one-edge-shadow"><a href="#">Όλα</a></li>
+          <li id="codDownloads" role="presentation"><a href="#">Cinema On Demand</a></li>
+          <li id="rtvDownloads" role="presentation"><a href="#">Replay TV</a></li>
+        </ul>
+     </div>
+     <div class="col-md-1">
+       <button type="button" class="btn btn-lg btn-default chevron" onclick="rightAddActiveDL()"><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></button>
+     </div>
+  </div>
+  <div id="allDivDL" class="row">
+      <div class="col-md-9">
+      <table class="table favTableMyRecs">
+        <tbody>
+          <tr class="">
+            <td id="myDLS1"><input id="boolSelectDL" type="checkbox" class="hidethis hidden" /><label for="boolSelectDL"><span class="hidden hidethis"></span></label>  <a href="#" onclick="dlDescription1()">Batman V Superman: H Αυγή Της Δικαιοσύνης</a> <span class="pull-right"><i class="fa fa-download" aria-hidden="true"></i></span></td>
+          </tr>
+          <tr class="">
+            <td id="myDLS2"><input id="boolSelectDL2" type="checkbox" class="hidethis hidden"/><label for="boolSelectDL2"><span class="hidden hidethis"></span></label>  <a href="#" onclick="dlDescription2()">Spectre</a> <span class="pull-right"> <i class="fa fa-clock-o" aria-hidden="true"></i> </span></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+          <tr class="">
+            <td id="fake1DL" class="hidden"></td>
+          </tr>
+          <tr class="">
+            <td id="fake2DL" class="hidden"></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="col-md-3">
+          <span id="descriptionOfDL" class="">
+          </span>
+      </div>
+  </div>
+
+  <div id="dlRTV" class="row hidden">
+    <div class="col-md-12 centMessageDL">
+        Δεν έχετε αποθηκεύσει προσωρινά κάποια ταινία / εκπομπή
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-12">
+        <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-backward" aria-hidden="true"></i></button>
+        1/1
+        <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-forward" aria-hidden="true"></i></button>
+      </div>
+      <br>
+      Πατήστε <button type="button" onclick="watchADownload()" data-toggle="modal" data-target="#agentInfo" class="btn btn-default btn-circle inforbutton">OK</button> για προβολή και <button type="button" data-toggle="modal" data-target="#dlSynopsis" class="btn btn-default btn-circle inforbutton">i</button> για σύνοψη
+         <div id="favUAButtons" class="pull-right">
+            <button type="button" class="btn btn-lg btn-danger" onclick="" data-toggle="modal" data-target="#deleteAdownload"></button> Διαγραφή
+            <button type="button" class="btn btn-lg btn-success" onclick="" data-toggle="modal" data-target="#choicesDL"></button> Επιλογές
+            <button type="button" class="btn btn-lg btn-warning" onclick="yellowButton()"></button> <span id="myDLSCheckALL">Επιλογή</span>
+            <button type="button" class="btn btn-lg btn-primary" onclick="" data-toggle="modal" data-target="#filterDL"></button> Φίλτρο
+         </div>
+  </div>
+
+  <div class="modal fade" id="deleteAdownload" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content centModalRec">
+        <div class="modal-body">
+          Να γίνει διαγραφή;<br>
+          <button type="button" class="btn btn-lg btn-default confirm pull-left buttonRec" data-dismiss="modal" data-toggle="modal" data-target="#dlDeleteMSG">Ναί</button>
+          <button type="button" class="btn btn-lg btn-default confirm buttonRec" data-dismiss="modal">Όχι</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="dlDeleteMSG" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content centModalRec">
+        <div class="modal-body">
+          Η λήψη του Spectre διαγράφηκε<br>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="choicesDL" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content centModalRec">
+        <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Επιλογές</h4>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li><a href="#" data-toggle="modal" onclick="watchADownload()" data-target="#agentInfo" data-dismiss="modal">Προβολή λήψης</a></li>
+            <li><a href="#" data-toggle="modal" onclick="cancelADownload()" data-target="#agentInfo" data-dismiss="modal">Ακύρωση λήψης</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#deleteAdownload" data-dismiss="modal">Διαγραφή λήψης</a></li>
+            <li><a href="#help" data-target="#help" data-toggle="modal" data-dismiss="modal">Βοήθεια</a></li>
+          </ul>
+          <div class="modal-footer">
+            <h3 class="panel-title">  Πατήστε  για <button type="button" class="btn btn-lg btn-default chevron" data-dismiss="modal"><i class="fa fa-undo" aria-hidden="true"></i></button> κλείσιμο </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="filterDL" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content centModalRecFilter">
+        <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel" style="text-align:center">Κατάσταση Λήψης</h4>
+        </div>
+        <div class="modal-body">
+          <table class="table">
+            <tbody>
+              <tr class="langTableRow">
+                <td> <input type="checkbox" id="filterAllDL" onclick="filterAllDL()" name="filterAllDL" /> <label for="filterAllDL"><span></span></label> </td>
+                <td>
+                  <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="filterAllDL()">Όλα</button> </div>
+                </td>
+              </tr>
+              <tr class="langTableRow">
+                <td> <input type="checkbox" id="filterDownloading" onclick="filterDownloading()" name="filterDownloading" /> <label for="filterDownloading"><span></span></label> </td>
+                <td>
+                  <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="filterDownloading()">Σε εξέλιξη</button> </div>
+                </td>
+              </tr>
+              <tr class="langTableRow">
+                <td> <input type="checkbox" id="filterCompletedDL" onclick="filterCompletedDL()" name="filterCompletedDL" /> <label for="filterCompletedDL"><span></span></label> </td>
+                <td>
+                  <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="filterCompletedDL()">Ολοκληρωμένες</button> </div>
+                </td>
+              </tr>
+              <tr class="langTableRow">
+                <td> <input type="checkbox" id="filterProgrammedDL" onclick="filterProgrammedDL()" name="filterProgrammedDL" /> <label for="filterProgrammedDL"><span></span></label> </td>
+                <td>
+                  <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="filterProgrammedDL()">Προγραμματισμένες</button> </div>
+                </td>
+              </tr>
+              <tr class="langTableRow">
+                <td> <input type="checkbox" id="filterInPauseDL" onclick="filterInPauseDL()" name="filterInPauseDL" /> <label for="filterInPauseDL"><span></span></label> </td>
+                <td>
+                  <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="filterInPauseDL()">Σε Παύση</button> </div>
+                </td>
+              </tr>
+              <tr class="langTableRow">
+                <td> <input type="checkbox" id="filterAFailedDL" onclick="filterAFailedDL()" name="filterAFailedDL" /> <label for="filterAFailedDL"><span></span></label> </td>
+                <td>
+                  <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="filterAFailedDL()">Αποτυχημένες</button> </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="modal-footer">
+            <h3 class="panel-title">  Πατήστε <button type="button" class="btn btn-lg btn-default chevron" data-dismiss="modal"><i class="fa fa-undo" aria-hidden="true"></i></button> για κλείσιμο </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="dlSynopsis" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content centModalSynopsis">
+        <div class="modal-body">
+          <div class="row">
+          <div class="col-md-4">
+                  <div id="sidebar-wrapper systima">
+                  <ul class="sidebar-nav">
+                      <li>
+                          <a href="#agentInfo" onclick="watchADownload()" data-toggle="modal">Προβολή Λήψης</a>
+                      </li>
+                      <li>
+                          <a href="#deleteAdownload" onclick="" data-toggle="modal" data-dismiss="modal">Διαγραφή Λήψης</a>
+                      </li>
+                      <li>
+                          <a href="#share" data-target="#share" data-toggle="modal">Κοινοποίηση</a>
+                      </li>
+                  </ul>
+                </div>
+                </div>
+                <!--  -->
+                 <div class="col-md-8" style="padding:0">
+                   <h3>Batman V Superman: H Αυγή Της Δικαιοσύνης</h3>
+                   <h4>Διάρκεια: 	02:25:24’ <img src="img/triangle.png"></h4>
+                   <h4>Υπό το φόβο των ολοένα και πιο απρόβλεπτων πράξεων του Σούπερμαν, ο Μπάτμαν αρνείται να αφήσει τον εξωγήινο υπερήρωα ανεξέλεγκτο.
+                     Με τους δυο τους να βρίσκονται σε πόλεμο όμως, μια μεγάλη απειλή κατά της ανθρωπότητας βρίσκει την ευκαιρία να αναδυθεί.</h4>
+                           <h3 class="panel-title">  Πατήστε  για <button type="button" class="btn btn-lg btn-default chevron" data-dismiss="modal"><i class="fa fa-undo" aria-hidden="true"></i></button> κλείσιμο </h3>
+                </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- TA ON DEMAND MOY -->
+<div id="myOnDemand" class="row recStyle hidden">
+  <h4>Τα On Demand μου</h4>
+  <div class="row navigationPill">
+     <div class="col-md-1">
+        <button type="button" class="btn btn-lg btn-default chevron" onclick="leftAddActiveCOD()"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></button>
+     </div>
+     <div class="col-md-10">
+        <ul class="nav nav-pills pull-left">
+          <li id="pageHolders" role="presentation" class="active one-edge-shadow"><a href="#">Σελιδοδείκτες</a></li>
+          <li id="mycodFavs" role="presentation"><a href="#">Αγαπημένα</a></li>
+        </ul>
+     </div>
+     <div class="col-md-1">
+       <button type="button" class="btn btn-lg btn-default chevron" onclick="rightAddActiveCOD()"><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></button>
+     </div>
+  </div>
+  <div id="codPageholdersDiv" class="row">
+      <div class="col-md-9">
+      <table class="table favTableMyRecs">
+        <tbody>
+          <tr class="">
+            <td id="myCOD1"><input id="boolSelectCOD1" type="checkbox" class="hidethis hidden" /><label for="boolSelectCOD1"><span class="hidden hidethis"></span></label>  <a href="#" onclick="descriptionOfCOD1()">Batman V Superman: H Αυγή Της Δικαιοσύνης</a> <span class="pull-right">1:53:23</span></td>
+          </tr>
+          <tr class="">
+            <td id="myCOD2"><input id="boolSelectCOD2" type="checkbox" class="hidethis hidden"/><label for="boolSelectCOD2"><span class="hidden hidethis"></span></label>  <a href="#" onclick="descriptionOfCOD2()">Spectre</a> <span class="pull-right">1:10:00</span></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+          <tr class="">
+            <td id="fake1CODPage" class="hidden"></td>
+          </tr>
+          <tr class="">
+            <td id="fake2CODPage" class="hidden"></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="col-md-3">
+          <span id="descriptionOfCOD" class="">
+          </span>
+      </div>
+  </div>
+
+  <div id="codFavoritesDIV" class="row hidden">
+      <div class="col-md-9">
+      <table class="table favTableMyRecs">
+        <tbody>
+          <tr class="">
+            <td id="codFavs1"><input id="boolSelectCOD1FAV" type="checkbox" class="hidethis hidden" /><label for="boolSelectCOD1FAV"><span class="hidden hidethis"></span></label>  <a href="#" onclick="descriptionOfCOD1()">Batman V Superman: H Αυγή Της Δικαιοσύνης</a> <span class="pull-right"><img class="hidden hidethisIMG"src="img/checkedGreen.png"></span></td>
+          </tr>
+          <tr class="">
+            <td id="codFavs2"><input id="boolSelectCOD2FAV" type="checkbox" class="hidethis hidden"/><label for="boolSelectCOD1FAV"><span class="hidden hidethis"></span></label>  <a href="#" onclick="descriptionOfCOD2()">Spectre</a> <span class="pull-right"><img class="hidden hidethisIMG" src="img/checkedGreen.png"></span></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+          <tr class="">
+            <td id="fake1CodFav" class="hidden"></td>
+          </tr>
+          <tr class="">
+            <td id="fake2CodFav" class="hidden"></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="col-md-3">
+          <span id="descriptionOfCODFAV" class="">
+          </span>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-12">
+        <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-backward" aria-hidden="true"></i></button>
+        1/1
+        <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-forward" aria-hidden="true"></i></button>
+      </div>
+      <br>
+      Πατήστε <button type="button" onclick="okCOD()" data-toggle="modal" data-target="#agentInfo" class="btn btn-default btn-circle inforbutton">OK</button> για προβολή και
+      <button type="button" onclick="batmanSynopsis()" data-toggle="modal" data-target="#synopsisCODRent" class="btn btn-default btn-circle inforbutton">i</button> για σύνοψη
+         <div id="favUAButtons" class="pull-right">
+            <button type="button" class="btn btn-lg btn-danger" onclick="codRedButton()" data-toggle="modal" data-target="#deleteACOD"></button> Διαγραφή
+            <button type="button" class="btn btn-lg btn-success" onclick="" data-toggle="modal" data-target="#choicesCOD"></button> Επιλογές
+            <button type="button" class="btn btn-lg btn-warning" onclick="yellowButton()"></button> <span id="myCODCheckALL">Επιλογή</span>
+         </div>
+  </div>
+
+  <div class="modal fade" id="deleteACOD" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content centModalRec">
+        <div id="deletionCOD" class="modal-body">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="codDeleteMSG" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content centModalRec">
+        <div id="deleteMessageCOD" class="modal-body">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="choicesCOD" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content centModalRec">
+        <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Επιλογές</h4>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li><a href="#" data-toggle="modal" onclick="trailerCOD()" data-target="#agentInfo" data-dismiss="modal">Τρέιλερ</a></li>
+            <li><a href="#" id="codRentGreen" data-toggle="modal" onclick="rentACOD()" data-target="#agentInfo" data-dismiss="modal">Ενοικίαση</a></li>
+            <li><a href="#" id="codWatchGreen" class="hidden" data-toggle="modal" onclick="okCOD()" data-target="#agentInfo" data-dismiss="modal">Προβολή</a></li>
+            <li><a href="#" id="codDLGreen" class="hidden" data-toggle="modal" onclick="downloadACOD()" data-target="#agentInfo" data-dismiss="modal">Λήψη</a></li>
+            <li><a href="#share" data-target="#share" data-toggle="modal">Κοινοποίηση</a></li>
+            <li><a href="#" onclick="showSearch()" data-dismiss="modal">Αναζήτηση</a></li>
+            <li><a href="#help" data-target="#help" data-toggle="modal" data-dismiss="modal">Βοήθεια</a></li>
+          </ul>
+          <div class="modal-footer">
+            <h3 class="panel-title">  Πατήστε  για <button type="button" class="btn btn-lg btn-default chevron" data-dismiss="modal"><i class="fa fa-undo" aria-hidden="true"></i></button> κλείσιμο </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ΙΣΤΟΡΙΚΟ -->
+<div id="rentalHistory" class="row recStyle hidden">
+  <h4>Ιστορικό</h4>
+  <div class="row navigationPill">
+     <div class="col-md-1">
+        <button type="button" class="btn btn-lg btn-default chevron" onclick="leftAddActiveHistory()"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></button>
+     </div>
+     <div class="col-md-10">
+        <ul class="nav nav-pills pull-left">
+          <li id="onDemandHistory" role="presentation" class="active one-edge-shadow"><a href="#">On Demand</a></li>
+          <li id="moviePackage" role="presentation"><a href="#">Πακέτο Ταινιών</a></li>
+        </ul>
+     </div>
+     <div class="col-md-1">
+       <button type="button" class="btn btn-lg btn-default chevron" onclick="rightAddActiveHistory()"><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></button>
+     </div>
+  </div>
+  <select id="historyCB" onchange="changeMonthHistory()" class="selectpicker">
+    <option value="1" style="background-color:black">Αύγουστος 2016</option>
+    <option value="2" style="background-color:black">Ιούνιος 2016</option>
+    <option value="3" style="background-color:black">Ιούλιος 2016</option>
+    <option value="4" style="background-color:black">Μάϊος 2016</option>
+  </select>
+  <span class="pull-right">Υπόλοιπο Πίστωσης: 0,00 &euro;</span>
+  <div id="historyDiv" class="row">
+      <div class="col-md-12">
+      <table class="table favTableRentalHistory">
+        <thead>
+          <tr class="">
+            <th>Ημ/νία</th>
+            <th>Τίτλος</th>
+            <th>Τιμή</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="myCOD1History" class="">
+            <td>19/8/2016 15:45</td>
+            <td><a href="#">Batman V Superman: H Αυγή Της Δικαιοσύνης</a></td>
+            <td>2,49&euro;</td>
+          </tr>
+          <tr id="myCOD2History" class="">
+            <td>20/8/2016 21:00</td>
+            <td><a href="#">Spectre</a></td>
+            <td>2,49&euro;</td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr id="fake1HistoryPage" class="hidden">
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr id="fake2HistoryPage" class="hidden">
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-12">
+        <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-backward" aria-hidden="true"></i></button>
+        1/1
+        <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-forward" aria-hidden="true"></i></button>
+      </div>
+  </div>
+</div>
+
+<!-- TA ON DEMAND MOY -->
+<div id="onDemandRent" class="row recStyle hidden">
+  <div id="mainmenuCod">
+  <h4>Cinema On Demand</h4>
+  <div class="row navigationPill">
+     <div class="col-md-1">
+        <button type="button" class="btn btn-lg btn-default chevron" onclick="leftAddActiveCODRENT()"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></button>
+     </div>
+     <div class="col-md-10">
+        <ul class="nav nav-pills pull-left">
+          <li id="premieres" role="presentation" class="active one-edge-shadow"><a href="#">Πρεμιέρες</a></li>
+          <li id="premiersHD" role="presentation"><a href="#">Πρεμίερες HD</a></li>
+          <li id="catsCOD" role="presentation"><a href="#">Κατηγορίες</a></li>
+          <li id="alphabetically" role="presentation"><a href="#">Αλφαβητικά</a></li>
+          <li id="adultsCOD" role="presentation"><a href="#">Ενήλικες</a></li>
+        </ul>
+     </div>
+     <div class="col-md-1">
+       <button type="button" class="btn btn-lg btn-default chevron" onclick="rightAddActiveCODRENT()"><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></button>
+     </div>
+  </div>
+</div>
+
+ <div id="menuPremieres">
+  <div id="mainViewPremieres" class="row">
+    <div class="col-md-1">
+       <button type="button" class="btn btn-lg btn-default chevron chevronCOD" onclick="iterateLEFT()"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></button>
+    </div>
+      <div class="col-md-10">
+          <table>
+            <tbody class="rentalsTD">
+              <tr>
+                <td><a href="#" data-toggle="modal" onclick="batmanSynopsis()" data-target="#synopsisCODRent"><img id="batman" class="grow" src="img/bvsSu.jpg"></a></td>
+                <td><a href="#" data-toggle="modal" onclick="specterSynopsis()" data-target="#synopsisCODRent"><img id="specter" class="grow" src="img/specter.jpg"></a></td>
+                <td><a href="#" data-toggle="modal" onclick="cloverSynopsis()" data-target="#synopsisCODRent"><img id="clover" class="grow" src="img/clover.jpg"></a></td>
+                <td><a href="#" data-toggle="modal" onclick="pandaSynopsis()" data-target="#synopsisCODRent"><img id="panda" class="grow" src="img/panda.jpg"></a></td>
+                <td><a href="#" data-toggle="modal" onclick="zootopiaSynopsis()" data-target="#synopsisCODRent"><img id="zootopia" class="grow" src="img/zootopia.jpg"></a></td>
+              </tr>
+              <tr>
+                <td>Batman V Superman: H Αυγή Της Δικαιοσύνης<br><img src="img/triangle.png"  height="15" width="15">Είδος: 	Περιπέτεια<br>Τιμή: 2,49&euro;</td>
+                <td>Spectre<br><img src="img/triangle.png"  height="15" width="15">Είδος: 	Περιπέτεια<br>Τιμή: 2,49&euro;</td>
+                <td>10 Cloverfield Lane<br><img src="img/triangle.png"  height="15" width="15">Είδος: 	Κοινωνική<br>Τιμή: 2,49&euro;</td>
+                <td>Kung Fu Panda 3<br><img src="img/triangle.png"  height="15" width="15">Είδος: 	Οικογενειακή<br>Τιμή: 2,49&euro;</td>
+                <td>Zootopia<br><img src="img/triangle.png"  height="15" width="15">Είδος: 	Οικογενειακή<br>Τιμή: 2,49&euro;</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+      <div class="col-md-1">
+        <button type="button" class="btn btn-lg btn-default chevron chevronCOD" onclick="iterateRIGHT()"><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></button>
+      </div>
+  </div>
+
+  <div id="altViewPremieres" class="row hidden">
+      <div class="col-md-9">
+      <table class="table favTableMyRecs">
+        <tbody>
+          <tr class="">
+            <td><a href="#" onclick="descriptionOfAltViewPremieres1()">Batman V Superman: H Αυγή Της Δικαιοσύνης</a></td>
+          </tr>
+          <tr class="">
+            <td><a href="#" onclick="descriptionOfAltViewPremieres2()">Spectre</a></td>
+          </tr>
+          <tr class="">
+            <td><a href="#" onclick="descriptionOfAltViewPremieres3()">10 Cloverfield Lane</a></td>
+          </tr>
+          <tr class="">
+            <td><a href="#" onclick="descriptionOfAltViewPremieres4()">Kung Fu Panda 3</a></td>
+          </tr>
+          <tr class="">
+            <td><a href="#" onclick="descriptionOfAltViewPremieres5()">Zootopia</a></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+          <tr class="">
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="col-md-3">
+          <span id="descriptionOfAltViewPremieres" class="">
+          </span>
+      </div>
+  </div>
+</div>
+
+<div id="menuCategoriesMAIN" class="row recStyle hidden">
+  <div id= "menuCategories" class="col-md-10">
+  <table class="table favTableRentalHistory">
+    <tbody>
+      <tr class="">
+        <td><a href="#" onclick="categoriesInside()">Πρεμιέρες<span class="pull-right"><i class="fa fa-folder-open" aria-hidden="true"></i></span></a></td>
+      </tr>
+      <tr class="">
+        <td><a href="#" onclick="categoriesInside()">Κωμωδίες<span class="pull-right"><i class="fa fa-folder-open" aria-hidden="true"></i></span></a></td>
+      </tr>
+      <tr class="">
+        <td><a href="#" onclick="categoriesInside()">Κοινωνικές<span class="pull-right"><i class="fa fa-folder-open" aria-hidden="true"></i></span></a></td>
+      </tr>
+      <tr class="">
+        <td><a href="#" onclick="categoriesInside()">Παιδικές<span class="pull-right"><i class="fa fa-folder-open" aria-hidden="true"></i></span></a></td>
+      </tr>
+      <tr class="">
+        <td><a href="#" onclick="categoriesInside()">Οικογενειακές<span class="pull-right"><i class="fa fa-folder-open" aria-hidden="true"></i></span></a></td>
+      </tr>
+      <tr class="">
+        <td><a href="#" onclick="categoriesInside()">Θρίλερ<span class="pull-right"><i class="fa fa-folder-open" aria-hidden="true"></i></span></a></td>
+      </tr>
+      <tr class="">
+        <td><a href="#" onclick="categoriesInside()">Κλασικές<span class="pull-right"><i class="fa fa-folder-open" aria-hidden="true"></i></span></a></td>
+      </tr>
+      <tr class="">
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div id= "menuAlphabetically" class="col-md-10 hidden">
+  <table class="table favTableRentalHistory">
+    <tbody>
+      <tr class="">
+        <td><a href="#" onclick="alphaBeticallyInside()">0-9</a><span class="pull-right"><i class="fa fa-folder-open" aria-hidden="true"></i></span></td>
+      </tr>
+      <tr class="">
+        <td><a href="#" onclick="alphaBeticallyInside()">A-Z<span class="pull-right"><i class="fa fa-folder-open" aria-hidden="true"></i></span></a></td>
+      </tr>
+      <tr class="">
+        <td><a href="#" onclick="alphaBeticallyInside()">H-M<span class="pull-right"><i class="fa fa-folder-open" aria-hidden="true"></i></span></a></td>
+      </tr>
+      <tr class="">
+        <td><a href="#" onclick="alphaBeticallyInside()">N-Σ<span class="pull-right"><i class="fa fa-folder-open" aria-hidden="true"></i></span></a></td>
+      </tr>
+      <tr class="">
+        <td><a href="#" onclick="alphaBeticallyInside()">Τ-Ω<span class="pull-right"><i class="fa fa-folder-open" aria-hidden="true"></i></span></a></td>
+      </tr>
+      <tr class="">
+        <td></td>
+      </tr>
+      <tr class="">
+        <td></td>
+      </tr>
+      <tr class="">
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="col-md-2 alignCenter">
+    Προτάσεις<br>
+    <button type="button" class="btn btn-lg btn-default chevron" onclick="iterateUP2()"><i class="fa fa-caret-up" aria-hidden="true"></i></button><br>
+    <img id="specterPropose2" class="imagesmProp growPropose" src="img/specter.jpg"><br>
+    <img id="zootopiaPropose2" class="imagesmProp growPropose" src="img/zootopia.jpg"><br>
+    <button type="button" class="btn btn-lg btn-default chevron" onclick="iterateDOWN2()"><i class="fa fa-caret-down" aria-hidden="true"></i></button><br>
+  </div>
+</div>
+
+<!-- ΚΟΥΜΠΙΑ VOD CAT/ALPHA MENU -->
+<div id="vodButtonsCategories" class="row hidden">
+    <div class="col-md-12">
+      <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-backward" aria-hidden="true"></i></button>
+      1/1
+      <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-forward" aria-hidden="true"></i></button> <br>
+      Πατήστε <button type="button" onclick="categoriesInside()" class="btn btn-default btn-circle inforbutton">OK</button> για λίστα ταινιών
+        <div id="favUAButtons" class="pull-right">
+            <button type="button" class="btn btn-lg btn-success" onclick="" data-toggle="modal" data-target="#codChoicesCatsAlpha"></button> Επιλογές
+            <button type="button" id="proposeSynopsisButton2" class="btn btn-lg btn-warning" onclick="proposalsTwo()"></button> Προτάσεις
+        </div>
+    </div>
+  </div>
+
+  <div id="mainmenuCategoriesInside" class="hidden">
+  <h4>Κατηγορίες</h4>
+  <div class="row navigationPill">
+     <div class="col-md-1">
+        <button type="button" class="btn btn-lg btn-default chevron" onclick="leftAddActiveCategories()"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></button>
+     </div>
+     <div class="col-md-10">
+        <ul id="theMenu" class="nav nav-pills pull-left">
+            <li id="catAdventures" role="presentation" class="active one-edge-shadow"><a href="#">Περιπέτειες</a></li>
+            <li id="catComedies" role="presentation"><a href="#">Κωμωδίες</a></li>
+            <li id="catSocial" role="presentation"><a href="#">Κοινωνικές</a></li>
+            <li id="catKids" role="presentation"><a href="#">Παιδικές</a></li>
+            <li id="catFamily" role="presentation"><a href="#">Οικογενειακές</a></li>
+        </ul>
+        <ul id="extraMenu" class="nav nav-pills pull-left hidden">
+            <li id="catΤhriller" role="presentation"><a href="#">Θρίλερ</a></li>
+            <li id="catClassic" role="presentation"><a href="#">Κλασικές</a></li>
+        </ul>
+     </div>
+     <div class="col-md-1">
+       <button type="button" class="btn btn-lg btn-default chevron" onclick="rightAddActiveCategories()"><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></button>
+     </div>
+  </div>
+</div>
+
+<div id="alphaMenu" class="hidden">
+<h4>Αλφαβητικά</h4>
+<div class="row navigationPill">
+   <div class="col-md-1">
+      <button type="button" class="btn btn-lg btn-default chevron" onclick="leftAddActiveAlpha()"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></button>
+   </div>
+   <div class="col-md-10">
+     <ul class="nav nav-pills pull-left">
+         <li id="zeroTo9" role="presentation" class="active one-edge-shadow"><a href="#">0-9</a></li>
+         <li id="aTOz" role="presentation"><a href="#">A-Z</a></li>
+         <li id="hToM" role="presentation"><a href="#">H-M</a></li>
+         <li id="nToS" role="presentation"><a href="#">N-Σ</a></li>
+         <li id="tToOmega" role="presentation"><a href="#">Τ-Ω</a></li>
+     </ul>
+   </div>
+   <div class="col-md-1">
+     <button type="button" class="btn btn-lg btn-default chevron" onclick="rightAddActiveAlpha()"><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></button>
+   </div>
+</div>
+</div>
+
+<div id="categoriesInside" class="row recStyle hidden">
+<div id= "menuCategoriesMainView" class="col-md-9 borderright">
+  <table class="table favTableRentalCOD">
+    <tbody>
+      <tr class="">
+        <td rowspan="2"><button type="button" class="btn btn-lg btn-default chevron chevronCOD" onclick="iterateLEFTCATS()"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></button></td>
+        <td><a href="#" data-toggle="modal" onclick="batmanSynopsis()" data-target="#synopsisCODRent"><img id="codALTC1" class="imagesm grow test" src="img/bvsSu.jpg"></a></td>
+        <td><a href="#" data-toggle="modal" onclick="specterSynopsis()" data-target="#synopsisCODRent"><img id="codALTC2" class="imagesm grow" src="img/specter.jpg"></a></td>
+        <td><a href="#" data-toggle="modal" onclick="cloverSynopsis()" data-target="#synopsisCODRent"><img id="codALTC3" class="imagesm grow" src="img/clover.jpg"></a></td>
+        <td><a href="#" data-toggle="modal" onclick="pandaSynopsis()" data-target="#synopsisCODRent"><img id="codALTC4" class="imagesm grow" src="img/panda.jpg"></a></td>
+        <td><a href="#" data-toggle="modal" onclick="zootopiaSynopsis()" data-target="#synopsisCODRent"><img id="codALTC5" class="imagesm grow" src="img/zootopia.jpg"></a></td>
+        <td rowspan="2"><button type="button" class="btn btn-lg btn-default chevron chevronCOD" onclick="iterateRIGHTCATS()"><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></button></td>
+      </tr>
+      <tr class="">
+        <td><a href="#" data-toggle="modal" onclick="batmanSynopsis()" data-target="#synopsisCODRent"><img id="codALTC6" class="imagesm grow" src="img/bvsSu.jpg"></a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div id= "menuCategoriesAltView" class="col-md-9 borderright hidden">
+    <table class="table favTableMyRecs">
+      <tbody>
+        <tr class="">
+          <td><a href="#" onclick="batmanRightSide()">Batman V Superman: H Αυγή Της Δικαιοσύνης</a></td>
+        </tr>
+        <tr class="">
+          <td><a href="#" onclick="specterRightSide()">Spectre</a></td>
+        </tr>
+        <tr class="">
+          <td><a href="#" onclick="cloverRightSide()">10 Cloverfield Lane</a></td>
+        </tr>
+        <tr class="">
+          <td><a href="#" onclick="pandaRightSide()">Kung Fu Panda 3</a></td>
+        </tr>
+        <tr class="">
+          <td><a href="#" onclick="zootopiaRightSide()">Zootopia</a></td>
+        </tr>
+        <tr class="">
+          <td></td>
+        </tr>
+        <tr class="">
+          <td></td>
+        </tr>
+        <tr class="">
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div id="categoriesInsideRightView" class="col-md-3 alignCenter fontsizesmall">
+    Spectre<br>
+    <img class="imagesbigcat growPropose" src="img/specter.jpg"><br>
+    <img class="" src="img/triangle.png" height="20" width="20"> Είδος: Περιπέτεια<br>
+    Τιμή: 2,49 &euro;<br>
+    Διάρκεια ενοικίασης: 48 ώρες
+  </div>
+</div>
+
+<div id="vodButtonsCatInside" class="row hidden">
+    <div class="col-md-12">
+      <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-backward" aria-hidden="true"></i></button>
+      1/99
+      <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-forward" aria-hidden="true"></i></button> <br>
+      Πατήστε <button type="button" onclick="okButtonCats()" data-toggle="modal" data-target="#synopsisCODRent" class="btn btn-default btn-circle inforbutton">OK</button> για σύνοψη
+        <div id="favUAButtons" class="pull-right">
+            <button type="button" class="btn btn-lg btn-danger" onclick="redButton()" data-toggle="modal" data-target="#codFavMSG"></button> <span id="favRentCatsInside">Προσ. Αγαπ.</span>
+            <button type="button" class="btn btn-lg btn-success" onclick="" data-toggle="modal" data-target="#codChoicesGreen"></button> Επιλογές
+            <button type="button" class="btn btn-lg btn-warning" onclick="yellowButton()"></button> Αλλαγή Προβολής
+            <button type="button" class="btn btn-default btn-circle inforbutton" onclick="okButtonCats()" data-toggle="modal" data-target="#synopsisCODRent">i</button> Σύνοψη
+        </div>
+    </div>
+  </div>
+
+<div id="menuAdult">
+</div>
+
+<div class="modal fade" id="codChoicesCatsAlpha" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content centModalRec">
+      <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel">Επιλογές</h4>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li><a href="#" onclick="showSearch()" data-dismiss="modal">Αναζήτηση</a></li>
+          <li><a href="#help" data-target="#help" data-toggle="modal" data-dismiss="modal">Βοήθεια</a></li>
+        </ul>
+        <div class="modal-footer">
+          <h3 class="panel-title">  Πατήστε  για <button type="button" class="btn btn-lg btn-default chevron" data-dismiss="modal"><i class="fa fa-undo" aria-hidden="true"></i></button> κλείσιμο </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="codChoicesGreen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content centModalRec">
+      <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel">Επιλογές</h4>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li><a href="#" data-toggle="modal" onclick="trailerCOD()" data-target="#agentInfo" data-dismiss="modal">Τρέιλερ</a></li>
+          <li><a href="#" id="codRentGreen2" data-toggle="modal" onclick="rentACOD2()" data-target="#agentInfo" data-dismiss="modal">Ενοικίαση</a></li>
+          <li><a href="#" id="codWatchGreen2" class="hidden" data-toggle="modal" onclick="watchACod()" data-target="#agentInfo" data-dismiss="modal">Προβολή</a></li>
+          <li><a href="#" id="codDLGreen2" class="hidden" data-toggle="modal" onclick="downloadACOD()" data-target="#agentInfo" data-dismiss="modal">Λήψη</a></li>
+          <li><a href="#share" data-target="#share" data-toggle="modal">Κοινοποίηση</a></li>
+          <li><a href="#" onclick="showSearch()" data-dismiss="modal">Αναζήτηση</a></li>
+          <li><a href="#help" data-target="#help" data-toggle="modal" data-dismiss="modal">Βοήθεια</a></li>
+        </ul>
+        <div class="modal-footer">
+          <h3 class="panel-title">  Πατήστε  για <button type="button" class="btn btn-lg btn-default chevron" data-dismiss="modal"><i class="fa fa-undo" aria-hidden="true"></i></button> κλείσιμο </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--KOYMΠΙΑ VOD NORMAL -->
+<div id="vodButtons" class="row">
+    <div class="col-md-12">
+      <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-backward" aria-hidden="true"></i></button>
+      1/99
+      <button type="button" class="btn btn-lg btn-default chevron"><i class="fa fa-fast-forward" aria-hidden="true"></i></button> <br>
+      Πατήστε <button type="button" onclick="synopsisCOD()" data-toggle="modal" data-target="#synopsisCODRent" class="btn btn-default btn-circle inforbutton">OK</button> για σύνοψη
+        <div id="favUAButtons" class="pull-right">
+            <button type="button" class="btn btn-lg btn-danger" onclick="redButton()" data-toggle="modal" data-target="#codFavMSG"></button> <span id="favRentCod">Προσ. Αγαπ.</span>
+            <button type="button" class="btn btn-lg btn-success" onclick="" data-toggle="modal" data-target="#codChoicesGreen"></button> Επιλογές
+            <button type="button" class="btn btn-lg btn-warning" onclick="yellowButton()"></button> Αλλαγή Προβολής
+            <button type="button" class="btn btn-lg btn-primary" onclick="filterAllCOD()" data-toggle="modal" data-target="#filterCODRENT"></button> Φίλτρο
+        </div>
+    </div>
+  </div>
+</div>
+
+<!--ΦΙΛΤΡΟ COD -->
+<div class="modal fade" id="filterCODRENT" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content centModalRecFilter">
+      <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel" style="text-align:center">Φίλτρο ανά Κατηγορία</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+          <tbody>
+            <tr class="langTableRow">
+              <td> <input type="checkbox" id="filterAllCOD" onclick="filterAllCOD()" name="filterAllCOD" /> <label for="filterAllCOD"><span></span></label> </td>
+              <td>
+                <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="filterAllCOD()">Όλες</button> </div>
+              </td>
+            </tr>
+            <tr class="langTableRow">
+              <td> <input type="checkbox" id="thriller" onclick="thriller()" name="thriller" /> <label for="thriller"><span></span></label> </td>
+              <td>
+                <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="thriller()">Θρίλερ</button> </div>
+              </td>
+            </tr>
+            <tr class="langTableRow">
+              <td> <input type="checkbox" id="familyCOD" onclick="familyCOD()" name="familyCOD" /> <label for="familyCOD"><span></span></label> </td>
+              <td>
+                <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="familyCOD()">Οικογενειακή</button> </div>
+              </td>
+            </tr>
+            <tr class="langTableRow">
+              <td> <input type="checkbox" id="socialCOD" onclick="socialCOD()" name="socialCOD" /> <label for="socialCOD"><span></span></label> </td>
+              <td>
+                <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="socialCOD()">Κοινωνική</button> </div>
+              </td>
+            </tr>
+            <tr class="langTableRow">
+              <td> <input type="checkbox" id="comedy" onclick="comedy()" name="comedy" /> <label for="comedy"><span></span></label> </td>
+              <td>
+                <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="comedy()">Κωμωδία</button> </div>
+              </td>
+            </tr>
+            <tr class="langTableRow">
+              <td> <input type="checkbox" id="adventure" onclick="adventure()" name="adventure" /> <label for="adventure"><span></span></label> </td>
+              <td>
+                <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="adventure()">Περιπέτεια</button> </div>
+              </td>
+            </tr>
+            <tr class="langTableRow">
+              <td> <input type="checkbox" id="kids" onclick="kids()" name="kids" /> <label for="kids"><span></span></label> </td>
+              <td>
+                <div> <button type="button" class="btn btn-lg btn-default choiceButton" onclick="kids()">Παιδικά</button> </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="modal-footer">
+          <h3 class="panel-title">  Πατήστε <button type="button" class="btn btn-lg btn-default chevron" data-dismiss="modal"><i class="fa fa-undo" aria-hidden="true"></i></button> για κλείσιμο </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--ΣΥΝΟΨΗ COD -->
+<div class="modal fade" id="synopsisCODRent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content centModalCODE">
+      <div id="synopsisCODE" class="modal-body">
+      <div class="row">
+        <div class="col-md-10">
+        <table id="movieSynopsis">
+          <tbody>
+            <tr>
+              <td>Ο χρήστης πρέπει να επιλέξει ταινία απο το μενού με τα βελάκια και πατώντας το πλήκτρο ΟΚ βγαίνει η σύνοψη ταινίας. Αν πατήσει το πράσινο κουμπί ενώ η επιλογή του είναι πάνω στο μενου το μόνο που θα βγει είναι Αναζήτηση και Βοήθεια.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button id="watchCodBtn" type="button" class="btn btn-lg btn-default buttonCOD hidden" onclick="watchACod()"  data-toggle="modal" data-target="#agentInfo">Προβολή</button>
+        <button type="button" id="rentButton" class="btn btn-lg btn-default buttonCOD" onclick="rentCOD()" data-toggle="modal" data-target="#agentInfo"><span id="rentLabel">Ενοικίαση</span></button>
+        <button id="downloadButton" type="button" class="btn btn-lg btn-default buttonCOD disabled" onclick="downloadACOD()" data-toggle="modal" data-target="#agentInfo">Λήψη</button>
+        <button type="button" class="btn btn-lg btn-default buttonCOD" onclick="trailerCOD()" data-toggle="modal" data-target="#agentInfo">Τρέϊλερ</button>
+        <button type="button" class="btn btn-lg btn-default buttonCOD" data-toggle="modal" data-target="#share">Κοινοποίηση</button>
+      </div>
+      <div class="col-md-2 alignCenter">
+        Προτάσεις<br>
+        <button type="button" class="btn btn-lg btn-default chevron" onclick="iterateUP()"><i class="fa fa-caret-up" aria-hidden="true"></i></button><br>
+        <img id="specterPropose" class="imagesm growPropose" src="img/specter.jpg"><br>
+        <img id="cloverPropose" class="imagesm growPropose" src="img/clover.jpg"><br>
+        <img id="zootopiaPropose" class="imagesm growPropose" src="img/zootopia.jpg"><br>
+        <button type="button" class="btn btn-lg btn-default chevron" onclick="iterateDOWN()"><i class="fa fa-caret-down" aria-hidden="true"></i></button><br>
+      </div>
+        <div class="row">
+          <div class="col-md-12">
+            Πλοήγηση με <i class="fa fa-arrows" aria-hidden="true"></i>
+            <span class="pull-right">
+            <button type="button" class="btn btn-lg btn-danger" onclick="redButton()" data-toggle="modal" data-target="#codFavMSG"></button> <span id="favRentCodSynopsis">Προσ. Αγαπ.</span>
+            <button type="button" id="proposeSynopsisButton" class="btn btn-lg btn-warning" onclick="proposals()"></button> Προτάσεις
+          </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL ΑΓΑΠΗΜΕΝΑ COD -->
+<div id="codFavMSG" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content centModalRec">
+      <div class="modal-body">
+       <span id="messageCODFav"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ΑΝΑΖΗΤΗΣΗ -->
+<div id="search" class="row recStyle hidden">
+  <div class="col-md-12">
+  <h4>Αναζήτηση</h4>
+  <span class="pull-left">
+      Πρόγραμμα:
+      <select class="selectpicker">
+        <option value="1" style="background-color:black">Όλα</option>
+        <option value="2" style="background-color:black">Κανάλια</option>
+        <option value="3" style="background-color:black">Replay TV</option>
+        <option value="4" style="background-color:black">On Demand</option>
+      </select>
+  </span>
+  <span class="pullCenter">
+  Κατηγορία:
+  <select class="selectpicker">
+    <option value="1" style="background-color:black">Όλα</option>
+    <option value="2" style="background-color:black">Tίτλος</option>
+    <option value="3" style="background-color:black">Ηθοποιοί</option>
+    <option value="4" style="background-color:black">Σκηνοθεσία</option>
+    <option value="5" style="background-color:black">Είδος</option>
+  </select>
+</span>
+  <span class="pull-right">
+    Λέξη-Κλειδί:
+    <input type="textbox">
+  </span>
+</div>
+<div class="row">
+      <div class="col-md-12">
+      <table class="table favTableRentalHistory">
+        <thead>
+          <tr style="background-color:black" class="">
+            <th>Δημοφιλής Λέξεις Κλειδιά</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="">
+            <td>Batman</td>
+          </tr>
+          <tr class="">
+            <td>Spectre</td>
+          </tr>
+          <tr class="">
+            <td>Sports</td>
+          </tr>
+          <tr class="">
+            <td>Drama</td>
+          </tr>
+          <tr class="">
+            <td>Spielberg</td>
+          </tr>
+          <tr class="">
+            <td>Ρίο 2016</td>
+          </tr>
+          <tr class="">
+            <td>Οτε</td>
+          </tr>
+          <tr class="">
+            <td>highlights</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+  </div>
+</div>
+
+<!-- ΒΟΗΘΕΙΑ-->
+<div id="help" class="modal fade" tabindex="1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content helpcss">
+      <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel">Βοήθεια</h4>
+          <i class="fa fa-caret-up pull-right" aria-hidden="true"></i>
+      </div>
+      <div class="modal-body">
+        <ul>
+            <li><a href="#">Αρχική Σύνδεση</a></li>
+            <li><a href="#">Λειτουργεία Ηybrid</a></li>
+            <li><a href="#">Πακέτα Καναλιών</a></li>
+            <li><a href="#">Πρόγραμμα Καναλιών</a></li>
+            <li><a href="#">Replay TV</a></li>
+            <li><a href="#">Cinema On Demand</a></li>
+            <li><a href="#">Κανάλια Cinema On Demand</a></li>
+            <li><a href="#">Εξωτερικός Σκληρός Δίσκος</a></li>
+            <li><a href="#">Εγγραφές</a></li>
+            <li><a href="#">Οι Λήψεις μου</a></li>
+            <li><a href="#">Αγαπημένα Κανάλια</a></li>
+            <li><a href="#">Διαχείρηση/Δικαιώματα Χρηστών</a></li>
+            <li><a href="#">Γονικός Έλενγχος</a></li>
+            <li><a href="#">Αναζήτηση</a></li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <i class="fa fa-caret-down pull-right" aria-hidden="true"></i> <br>
+           Πατήστε <button type="button" class="btn btn-lg btn-default chevron" data-dismiss="modal"><i class="fa fa-undo" aria-hidden="true"></i></button>
+           για κλείσιμο
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- ΕΙΔΟΣ -->
+<div id="eidos" class="modal fade" tabindex="1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content helpcss">
+      <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel">Είδος</h4>
+          <i class="fa fa-caret-up pull-right" aria-hidden="true"></i>
+      </div>
+      <div class="modal-body">
+          <table class="table table-hover">
+              <tbody>
+                <tr>
+                  <td>Όλα</td>
+                  <td>98 Κανάλια</td>
+                </tr>
+                <tr>
+                  <td>Αγαπημένα</td>
+                  <td>18 Κανάλια</td>
+                </tr>
+                <tr>
+                  <td>Ελληνικά</td>
+                  <td>12 Κανάλια</td>
+                </tr>
+                <tr>
+                  <td>Ταινίες/Σειρές</td>
+                  <td>10 Κανάλια</td>
+                </tr>
+                <tr>
+                  <td>Αθλητικά</td>
+                  <td>13 Κανάλια</td>
+                </tr>
+                <tr>
+                  <td>Ντοκιμαντέρ</td>
+                  <td>10 Κανάλια</td>
+                </tr>
+                <tr>
+                  <td>Lifestyle</td>
+                  <td>5 Κανάλια</td>
+                </tr>
+                <tr>
+                  <td>Παιδικά</td>
+                  <td>5 Κανάλια</td>
+                </tr>
+                <tr>
+                  <td>Μουσικά</td>
+                  <td>8 Κανάλια</td>
+                </tr>
+                <tr>
+                  <td>Τοπικά Ελλ</td>
+                  <td>21 Κανάλια</td>
+                </tr>
+                <tr>
+                  <td>Ειδησεογραφικά</td>
+                  <td>8 Κανάλια</td>
+                </tr>
+                <tr>
+                  <td>Για ενηλίκους</td>
+                  <td>5 Κανάλια</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+        <div class="modal-footer">
+          <i class="fa fa-caret-down pull-right" aria-hidden="true"></i> <br>
+           Πατήστε <button type="button" class="btn btn-lg btn-default chevron" data-dismiss="modal"><i class="fa fa-undo" aria-hidden="true"></i></button>
+           για κλείσιμο
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- ΛΙΣΤΑ ΚΑΝΑΛΙΩΝ -->
+    <div id="chanList" class="row hidden">
+          <div class="col-md-4 chanIn">
+                <div id="channelList" class="panel panel-primary">
+                <div class="panel-heading">
+                  <button type="button" class="btn btn-lg btn-default chevron pull-left" onclick="chanListLeft()"><i class="fa fa-caret-left" aria-hidden="true"></i></button>
+                  <span id="channelTitle">Όλα</span>
+                  <button type="button" class="btn btn-lg btn-default chevron pull-right" onclick="chanListRight()"><i class="fa fa-caret-right" aria-hidden="true"></i></button>
+                </div>
+                  <div class="panel-body">
+                    <ul>
+                        <li><a href="#">101 ΒΟΥΛΗ</a></li>
+                        <li><a href="#">102 ΕΡΤ1</a></li>
+                        <li><a href="#">103 ΕΡΤ2</a></li>
+                        <li><a href="#">104 ΕΡΤ3</a></li>
+                        <li><a href="#">105 ΕΡΤ HD</a></li>
+                        <li><a href="#">106 MEGA</a></li>
+                        <li><a href="#">107 ANT1</a></li>
+                        <li><a href="#">108 ALPHA</a></li>
+                        <li><a href="#">109 STAR</a></li>
+                        <li><a href="#">110 ΣΚΑΪ</a></li>
+                        <li><a href="#">111 Epsilon TV</a></li>
+                        <li><a href="#">112 Euronews</a></li>
+                        <li><a href="#">151 OTE HISTORY</a></li>
+                        <li><a href="#">201 OTE CINEMA 1HD</a></li>
+                        <li><a href="#">202 OTE CINEMA 2</a></li>
+                        <li><a href="#">203 OTE CINEMA 3</a></li>
+                        <li><a href="#">204 OTE CINEMA 4 HD</a></li>
+                        <li><a href="#">205 Village Cinema HD</a></li>
+                        <li><a href="#">206 Sundance Channel HD</a></li>
+                        <li><a href="#">207 FOX Life HD</a></li>
+                        <li><a href="#">208 FOX HD</a></li>
+                        <li><a href="#">209 E! HD</a></li>
+                        <li><a href="#">222 CinemaOnDemand HD</a></li>
+                        <li><a href="#">223 CinemaOnDemand 1</a></li>
+                        <li><a href="#">224 CinemaOnDemand 2</a></li>
+                        <li><a href="#">225 CinemaOnDemand 3</a></li>
+                        <li><a href="#">301 OTE Sport Highlights HD</a></li>
+                        <li><a href="#">302 OTE Sport 1 HD</a></li>
+                        <li><a href="#">303 OTE Sport 2 HD</a></li>
+                        <li><a href="#">304 OTE Sport 3 HD</a></li>
+                        <li><a href="#">305 OTE Sport 4 HD</a></li>
+                        <li><a href="#">306 OTE Sport 5 HD</a></li>
+                        <li><a href="#">307 OTE Sport 6 HD</a></li>
+                        <li><a href="#">308 OTE Sport 7 HD</a></li>
+                        <li><a href="#">309 OTE Sport 8 HD</a></li>
+                        <li><a href="#">310 Eurosport 1 HD</a></li>
+                        <li><a href="#">311 Eurosport 2</a></li>
+                        <li><a href="#">312 EDGEsport HD</a></li>
+                        <li><a href="#">313 Motorvision Channel HD</a></li>
+                        <li><a href="#">401 Nat Geo HD</a></li>
+                        <li><a href="#">402 National Geographic Channel</a></li>
+                        <li><a href="#">403 Discovery Showcase HD</a></li>
+                        <li><a href="#">404 Discovery Channel</a></li>
+                        <li><a href="#">405 Discovery Science HD</a></li>
+                        <li><a href="#">406 Nat Geo Wild HD</a></li>
+                        <li><a href="#">407 Animal Planet HD</a></li>
+                        <li><a href="#">408 Viasat History</a></li>
+                        <li><a href="#">409 Travel Channel HD</a></li>
+                        <li><a href="#">410 IDX HD</a></li>
+                        <li><a href="#">451 TLC</a></li>
+                        <li><a href="#">452 Luxe TV HD</a></li>
+                        <li><a href="#">453 Fashion TV</a></li>
+                        <li><a href="#">454 World Fashion</a></li>
+                        <li><a href="#">455 Body in Balance</a></li>
+                        <li><a href="#">501 Disney Channel</a></li>
+                        <li><a href="#">502 Disney XD</a></li>
+                        <li><a href="#">503 Disney Junior</a></li>
+                        <li><a href="#">504 Nickelodeon HD</a></li>
+                        <li><a href="#">506 Baby TV</a></li>
+                        <li><a href="#">601 MAD</a></li>
+                        <li><a href="#">602 MAD Hits</a></li>
+                        <li><a href="#">603 MTV Europe</a></li>
+                        <li><a href="#">604 MTV Live HD</a></li>
+                        <li><a href="#">605 VH1</a></li>
+                        <li><a href="#">606 MEZZO</a></li>
+                        <li><a href="#">607 C Music TV</a></li>
+                        <li><a href="#">608 iConcerts HD</a></li>
+                        <li><a href="#">650 Μακεδονία TV</a></li>
+                        <li><a href="#">652 Kontra Channel</a></li>
+                        <li><a href="#">653 Extra</a></li>
+                        <li><a href="#">654 SBC</a></li>
+                        <li><a href="#">655 TV100</a></li>
+                        <li><a href="#">656 Κρήτη TV</a></li>
+                        <li><a href="#">657 Star Κεντρικής Ελλάδας</a></li>
+                        <li><a href="#">658 4Ε</a></li>
+                        <li><a href="#">659 Ήπειρος TV1</a></li>
+                        <li><a href="#">660 ΔΙΚΤΥΟ TV</a></li>
+                        <li><a href="#">661 Δέλτα TV</a></li>
+                        <li><a href="#">662 Blue Sky</a></li>
+                        <li><a href="#">663 ΑΡΤ</a></li>
+                        <li><a href="#">664 Zoom TV</a></li>
+                        <li><a href="#">665 Channel 9</a></li>
+                        <li><a href="#">666 Best TV</a></li>
+                        <li><a href="#">667 Corfu Channel</a></li>
+                        <li><a href="#">668 Αιγαίο TV</a></li>
+                        <li><a href="#">669 Tvkosmos</a></li>
+                        <li><a href="#">670 TRT</a></li>
+                        <li><a href="#">671 ALERT</a></li>
+                        <li><a href="#">702 BBC World News</a></li>
+                        <li><a href="#">704 Deutsche Welle</a></li>
+                        <li><a href="#">705 France 24 En</a></li>
+                        <li><a href="#">706 France 24 Fr</a></li>
+                        <li><a href="#">707 Al Jazeera</a></li>
+                        <li><a href="#">709 Russia Today</a></li>
+                        <li><a href="#">710 Bloomberg</a></li>
+                        <li><a href="#">711 CNBC</a></li>
+                        <li><a href="#">781 Blue Hustler</a></li>
+                        <li><a href="#">782 Sirina TV</a></li>
+                        <li><a href="#">783 Penthouse HD1</a></li>
+                        <li><a href="#">784 Hustler TV HD</a></li>
+                        <li><a href="#">785 Private TV</a></li>
+                    </ul>
+                  </div>
+                  <div class="panel-heading">
+                    <i class="fa fa-sort" aria-hidden="true"></i>
+                  </div>
+              </div>
+          </div>
+          <!--  -->
+        <div class="col-md-8" style="padding:0">
+             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+             <div class="chanInfo">
+                 <h4><span class="bluePR">Τώρα</span> 14:00-14:30 Όνομα Προγράμματος</h4>
+                 <h4><span class="bluePR">Μετά</span> 14:30-16:00 Όνομα Προγράμματος</h4>
+           </div>
+        </div>
+    </div>
+
+  <div id="agentInfo" class="modal agentInfo fade" tabindex="-1" role="dialog" aria-labelledby="agentInfo">
+    <div id="addFav" class="modal-dialog modal-lg" role="document">
+      <div class="modal-content centModal">
+        <div class="modal-body">
+         <span id="agentMsg">______</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- RECORD FUNCTIONALITY -->
+<div id="recFunctionality" class="row recordfunct hidden">
+       Παρακαλώ διακόψτε μία απο τις τρέχουσες εγγραφές για να συνεχίσετε με τον προγραμματισμό νέας εγγραφής<br>
+       <h4><span class="pull-left">Πρόγραμμα</span> </h4>
+       <h4><span class="pull-right">Κατάσταση</span> </h4><br>
+       <hr>
+       <div id="rec1" class="hightlighted hidden"><span class="pull-left"><input id="rec1cb" onclick="rec1cb()" type="checkbox" /><label for="rec1cb"><span></span></label> Εγγραφή 1</span> <span class="pull-right">Προγραμματισμένη</span><br></div>
+       <div id="rec2" class="hightlighted hidden"><span class=""><input id="rec2cb" onclick="rec2cb()" type="checkbox" /><label for="rec2cb"><span></span></label> Εγγραφή 2</span> <span class="pull-right">Προγραμματισμένη</span><br></div>
+      <div class="recFunButtons">
+       <button type="button" class="btn btn-lg btn-default" onclick="stopRecok()">Διακοπή</button>
+       <button type="button" class="btn btn-lg btn-default" onclick="stopRecCancel()">Ακύρωση</button>
+     </div>
+</div>
+
+<div id="rc" class="modal agentInfo fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+            <img src="img/rc.png">
+      </div>
+    </div>
+  </div>
+</div>
+<div id="frontView" class="modal agentInfo fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+            <img src="img/frontView.png">
+      </div>
+    </div>
+  </div>
+</div>
+<div id="backView" class="modal agentInfo fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+            <img src="img/backView.png">
+      </div>
+    </div>
+  </div>
+</div>
+<div id="rentProcedure" class="modal agentInfo fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+            <img src="img/rentAmovie.png">
+      </div>
+    </div>
+  </div>
+</div>
+<div id="dth" class="modal agentInfo fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+            <img src="img/dthcl.png">
+      </div>
+    </div>
+  </div>
+</div>
+</div><!-- Container service -->
+
+
+<!-- ΚΟΥΜΠΙΑ ΤΗΛΕΚΟΝΤΡΟΛ -->
+  <div class="container rcbuttons">
+ 	<div class="row">
+  		<div class="col-md-12">
+			<h3>Κουμπιά Τηλεκοντρόλ</h3>
+  		</div>
+  	</div>
+  	<div class="row">
+  		<div class="col-md-12">
+  		    <button type="button" class="btn btn-lg btn-default" onclick="showPageOne()"><i class="fa fa-fast-backward" aria-hidden="true"></i></button>
+	        <button type="button" class="btn btn-lg btn-default" onclick="playButton()" data-toggle="modal" data-target="#agentInfo"><i class="fa fa-play" aria-hidden="true"></i></button>
+	        <button type="button" class="btn btn-lg btn-default" onclick="showPageTwo()"><i class="fa fa-fast-forward" aria-hidden="true"></i></button>
+			    <button type="button" class="btn btn-lg btn-default" onclick="backbutton()"><i class="fa fa-undo" aria-hidden="true"></i></button>
+	        <button type="button" class="btn btn-lg btn-danger" onclick="redButton()" data-toggle="modal" data-target=".bs-example-modal-lg"></button>
+	        <button type="button" class="btn btn-lg btn-success" onclick="greenbutton()"></button>
+	        <button type="button" class="btn btn-lg btn-warning" onclick="yellowButton()"></button>
+	        <button type="button" class="btn btn-lg btn-primary" onclick="blueButton()"></button>
+	        <button type="button" class="btn btn-lg btn-default" onclick="iButton()">i</button>
+	        <button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#help">?</button>
+	        <button type="button" class="btn btn-lg btn-default" onclick="showMessages()"><i class="fa fa-envelope" aria-hidden="true"></i></button>
+	        <button type="button" class="btn btn-lg btn-default" onclick="showSearch()"><i class="fa fa-search" aria-hidden="true"></i></button>
+          <span class="bordering">PVR: <input id="pvrMode" onclick="pvrMode()" type="checkbox"  data-toggle="modal" data-target="#agentInfo"/><label for="pvrMode"><span></span></label></span>
+          <span class="bordering">External HDD: <input id="extHDDmode" onclick="extHDDmode()" type="checkbox" data-toggle="modal" data-target="#agentInfo"/><label for="extHDDmode"><span></span></label></span>
+          <span class="bordering">HDD N/A: <input id="noHDDmode" onclick="noHDDmode()" type="checkbox" checked="true"  data-toggle="modal" data-target="#agentInfo"/><label for="noHDDmode"><span></span></label></span>
+  		</div>
+  	</div>
+  	<div class="row">
+  		<div class="col-md-12">
+  		  	<button type="button" class="btn btn-lg btn-default" onclick="stopButton()"><i class="fa fa-square" aria-hidden="true"></i></button>
+	        <button type="button" class="btn btn-lg btn-default" onclick="livepause()"><i class="fa fa-pause" aria-hidden="true"></i></button>
+	        <button type="button" class="btn btn-lg btn-default" onclick="showRecord()"><i class="fa fa-circle" aria-hidden="true"></i></button>
+			<a href="index.html"><button type="button" class="btn btn-lg btn-default">Menu</button></a>
+          <button type="button" class="btn btn-lg btn-default" onclick="okButton()">OK</button>
+			    <button type="button" class="btn btn-lg btn-default" onclick="showProgramm()">EPG</button>
+			    <button type="button" class="btn btn-lg btn-default" onclick="favButton()">FAV</button>
+		      <button type="button" class="btn btn-lg btn-default" onclick="showCinemaOnDemand()">VOD</button>
+          <button type="button" class="btn btn-lg btn-default" onclick="showMyRecordings()">PVR</button>
+	        <button type="button" class="btn btn-lg btn-default" onclick="checkSignal()"><i class="fa fa-signal" aria-hidden="true"></i></button>
+          <span class="bordering">Rec Status: <img id="recImg" src="img/rec.png" style="width:52px;height:46px;" class="hidden"/><img id="recImg2" src="img/rec.png" style="width:52px;height:46px;" class="hidden"/></span>
+  		</div>
+  	</div>
+    <hr>
+    <div class="row">
+  		<div class="col-md-12">
+          <button type="button" class="btn btn-lg btn-primary" onclick="agentInfo()" data-toggle="modal" data-target="#agentInfo">Info For Agent</button>
+          <button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#rc">View RC</button>
+          <button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#frontView">STB Front View</button>
+          <button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#backView">STB Back View</button>
+          <button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#rentProcedure">COD Sat</button>
+          <button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#dth">DTH LineUp</button>
+           <a href="https://www.cosmote.gr/otetv/residential/program" class="btn btn-default" target="_blank">Official EPG</a>
+  		</div>
+  	</div>
+  </div>
+
+    <div class="container specialinfo">
+  	<div class="row">
+  		<div class="col-md-12">
+  			 <div class="well"> *Διαθέσιμο στον OTE TV Μέσω Ευρυζωνικής Σύνδεσης και OTE TV Μέσω Δορυφόρου σε λειτουργία Hybrid
+  			<br>**Διαθέσιμο στον ΟΤΕ TV Μέσω Δορυφόρου
+        </div>
+  		</div>
+  	</div>
+  </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
